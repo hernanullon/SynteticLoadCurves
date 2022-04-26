@@ -37,6 +37,7 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 A saída do modelo será uma curva de consumo/geração. Essa curva consiste em um dado tabular com uma coluna e  96 linhas, sendo que numa primeira abordagem a ideia é transformar cada uma dessas linhas numa feature e obter a partir do modelo um valor para cada ponto dessa curva. 
 
 Link do vídeo de apresentação da proposta do projeto:
+
 https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFNXTg/edit?usp=sharing
 
 ## Metodologia Proposta
