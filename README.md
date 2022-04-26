@@ -1,5 +1,5 @@
-# `<Modelando curvas de carga diárias de sistemas de distribução usando modelos generativos>`
-# `<Modeling daily load profiles of distribution network using generative models>`
+# `<Geração de cenários em sistemas de distribuição usando modelos generativos>`
+# `<Scenario generation in distribution systems using generative models>`
 
 ## Apresentação
 
@@ -42,7 +42,13 @@ A saída do modelo será uma curva de consumo/geração. Essa curva consiste em 
 
 **Base de dados**
 
+
 Atualmente, existem cerca de 330 medidores inteligentes instalados em transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP). Os medidores realizam medições a cada 30 segundos, coletando um total de 12 características elétricas, porém, a maioria delas foi classificada por fase, o que gerou conjuntos de dados de 27 features para cada registro. Um resumo dos features é mostrado na Tabela 1.
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/BaseDados.jpeg" align="middle" width="600">
+</p>
+
 
 <div align="center">
 <table>
@@ -82,24 +88,51 @@ Com base no objetivo do estudo de curvas de carga, nossas variáveis de foco ser
 
 A utilização de modelos generativos permite utilizar grandes volumes de dados de treinamento não rotulados, permitindo gerar diretamente novos cenários baseados em dados históricos, sem especificar explicitamente um modelo ou as distribuições de probabilidade. Com o uso deste tipo de aprendizado não supervisionado, evita-se o processo de etiquetado manual dos dados. Três modelos generativos têm sido usados para gerar curvas de carga:
 
-Redes generativas baseadas em fluxo [1]
-Redes adversárias generativas (GANs) [2,3]
-Autoencoders Variacionais [4]
+	
+* Redes generativas baseadas em fluxo [1]
+	
+* Redes adversárias generativas (GANs) [2,3]
+	
+* Autoencoders Variacionais [4]
 
 Os autores em [1] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês Non-linear independent component estimation).
 
 O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura ?, uma série de funções reversíveis f(.) mapeiam as amostras reais x para um espaço latente z que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa f1(z).
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/NICE.png" align="middle" width="400">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/NICE.png" align="middle" width="600">
 </p>
 
-A arquitetura do modelo foi desenvolvida usando PyTorch e está disponível em um repositório Github.
 
-A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+A arquitetura do modelo base vai ser desenvolvida usando PyTorch. A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+
+**Resultados esperados**
+
+Espera-se obter um conjunto de curvas de cargas que representem adequadamente o comportamento real das cargas, tanto daquelas que possuem GDs conectadas quanto aquelas que não possuem esse tipo de geração.
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/results.png" align="middle" width="900">
+</p>
+
+**Proposta de avaliação**
+
+Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras geradas e as reais:
+* Função de autocorrelação
+* Coeficiente de correlação de Pearson
+* Curva de duração da curva de consumo 
+* A volatilidade dos perfis de carga diária
+* Estudos de fluxo de carga e perdas no OpenDSS
+
 
 ## Cronograma
 > Proposta de cronograma. Procure estimar quantas semanas serão gastas para cada etapa do projeto.
 
 ## Referências Bibliográficas
-> Apontar nesta seção as referências bibliográficas adotadas no projeto.
+[1] L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai, "Modeling Daily Load Profiles of Distribution Network for Scenario Generation Using Flow-Based Generative Network," in IEEE Access, vol. 8, pp. 77587-77597, 2020, doi: 10.1109/ACCESS.2020.2989350.
+
+[2] Tajer, A., Perlaza, S., & Poor, H. (Eds.). (2021). Advanced Data Analytics for Power Systems. Cambridge: Cambridge University Press. doi:10.1017/9781108859806
+
+[3] C. Jiang, Y. Mao, Y. Chai, M. Yu and S. Tao, "Scenario Generation for Wind Power Using Improved Generative Adversarial Networks," in IEEE Access, vol. 6, pp. 62193-62203, 2018, doi: 10.1109/ACCESS.2018.2875936.
+
+[4] Pan, Zhixin, Jianming Wang, Wenlong Liao, Haiwen Chen, Dong Yuan, Weiping Zhu, Xin Fang, and Zhen Zhu. 2019. "Data-Driven EV Load Profiles Generation Using a Variational Auto-Encoder" Energies 12, no. 5: 849. https://doi.org/10.3390/en12050849 
+
