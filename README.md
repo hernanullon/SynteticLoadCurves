@@ -36,7 +36,8 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 
 A saída do modelo será uma curva de consumo/geração. Essa curva consiste em um dado tabular com uma coluna e  96 linhas, sendo que numa primeira abordagem a ideia é transformar cada uma dessas linhas numa feature e obter a partir do modelo um valor para cada ponto dessa curva. 
 
-> Incluir nessa seção link para vídeo de apresentação da proposta do projeto (máximo 5 minutos).
+Link do vídeo de apresentação da proposta do projeto:
+https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFNXTg/edit?usp=sharing
 
 ## Metodologia Proposta
 
@@ -125,7 +126,9 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 
 
 ## Cronograma
-> Proposta de cronograma. Procure estimar quantas semanas serão gastas para cada etapa do projeto.
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/cronograma.png" align="middle" width="900">
+</p>
 
 ## Referências Bibliográficas
 [1] L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai, "Modeling Daily Load Profiles of Distribution Network for Scenario Generation Using Flow-Based Generative Network," in IEEE Access, vol. 8, pp. 77587-77597, 2020, doi: 10.1109/ACCESS.2020.2989350.
