@@ -1,5 +1,5 @@
-# `<Geração de cenários em sistemas de distribuição usando modelos generativos>`
-# `<Scenario generation in distribution systems using generative models>`
+# `Geração de cenários em sistemas de distribuição usando modelos generativos`
+# `Scenario generation in distribution systems using generative models`
 
 ## Apresentação
 
