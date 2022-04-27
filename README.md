@@ -38,6 +38,7 @@ A saída do modelo será uma curva de consumo/geração. Essa curva consiste em 
 
 Link do vídeo de apresentação da proposta do projeto:
 https://www.youtube.com/watch?v=CWisubeqaLg
+https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFNXTg/edit?usp=drivesdk
 
 ## Metodologia Proposta
 
