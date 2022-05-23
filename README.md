@@ -54,7 +54,7 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 
 ## Metodologia Proposta
 
-**Base de dados**
+### Base de dados
 Atualmente, existem cerca de 330 medidores inteligentes instalados em transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP). Os medidores realizam medições a cada 30 segundos, coletando um total de 12 características elétricas, porém, a maioria delas foi classificada por fase, o que gerou conjuntos de dados de 27 features para cada registro. Um resumo dos features é mostrado na Tabela 1.
 
 <p align="center">
