@@ -13,6 +13,11 @@ oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dr
 | Luís H. Tenorio | 156449  | Eng. Eletricisita |
 | Hernan Ullon    | 262729  | Eng. de Computação |
 
+## Link do vídeo de apresentação da proposta do projeto
+
+https://www.youtube.com/watch?v=CWisubeqaLg
+https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFNXTg/edit?usp=drivesdk
+
 ## Resumo (Abstract)
 
 
@@ -28,7 +33,7 @@ As análises para operação e planejamento em sistemas de distribuição de ene
 </p>
 
 
-Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. Interconectadas à subestação, ao longo do sistema de distribuição ou diretamente ao consumidor, com tamanho limitado, tipicamente inferior a 10MW, essa geração de energia recebe o nome de Geração Distribuída (GD) (BARKER; DE MELLO, 2000), geração esta que tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia por apresentarem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico (PV) ao longo de um dia ensolarado, de um dia nublado e de um dia chuvoso. 
+Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. Interconectadas à subestação, ao longo do sistema de distribuição ou diretamente ao consumidor, com tamanho limitado, tipicamente inferior a 10MW, essa geração de energia recebe o nome de Geração Distribuída (GD) (BARKER; DE MELLO, 2000). Este tipo de geração tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia por apresentarem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico (PV) para diferentes condições climáticas. 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Solar-power-output-for-different-weather-conditions-a-sunny-day-20-April-2013-cloudy.png" align="middle" width="400">
@@ -37,23 +42,19 @@ Nos últimos anos tem surgido uma nova tendência de geração de energia que, d
   	</figcaption>
 </p>
 
-Como parte da demanda de potência de uma UC que possui um painel fotovoltaico provém deste, e como a potência de saída do painel é influenciada pelas condições climáticas, a demanda de potência (consumo) desta UC é alterada de acordo com as condições climáticas, sendo impossível atribuir uma única curva de consumo típica a esta UC, inviabilizando as análises de operação e planejamento.
+Como parte da demanda de potência de uma UC que possui GDs provém destes sistemas, e como a potência de saída do PV é influenciada pelas condições climáticas, a demanda de potência desta UC é alterada de acordo com as condições climáticas, sendo impossível atribuir uma única curva de consumo típica a esta UC, inviabilizando as análises de operação e planejamento.
 
 Para contornar esse problema e contabilizar essas incertezas, os principais métodos disponíveis na literatura usam uma abordagem baseada na geração de conjuntos de possíveis cenários de geração/consumo na forma de séries temporais. Esses cenários são, então, utilizados para levantar informações relevantes, como os possíveis estados de operação do sistema e as possíveis demandas de energia. Dessa forma, modelar com precisão as incertezas associadas às GDs é fundamental para possibilitar que os operadores de sistemas de distribuição sejam capazes de tomar decisões mais assertivas.
 
+## Objetivos
+
 O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar diferentes cenários de séries temporais a partir de dados coletados nos sistema de distribuição do campus da UNICAMP em Barão Geraldo. Este sistema conta com a presença de diferentes tipos de cargas, painéis fotovoltaicos e uma estação de recarga para veículos elétricos.
 
-A saída do modelo será uma curva de consumo/geração. Essa curva consiste em um dado tabular com uma coluna e  96 linhas, sendo que numa primeira abordagem a ideia é transformar cada uma dessas linhas numa feature e obter a partir do modelo um valor para cada ponto dessa curva. 
-
-Link do vídeo de apresentação da proposta do projeto:
-https://www.youtube.com/watch?v=CWisubeqaLg
-https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFNXTg/edit?usp=drivesdk
+<!-- A saída do modelo será uma curva de consumo/geração. Essa curva consiste em um dado tabular com uma coluna e  96 linhas, sendo que numa primeira abordagem a ideia é transformar cada uma dessas linhas numa feature e obter a partir do modelo um valor para cada ponto dessa curva.  -->
 
 ## Metodologia Proposta
 
 **Base de dados**
-
-
 Atualmente, existem cerca de 330 medidores inteligentes instalados em transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP). Os medidores realizam medições a cada 30 segundos, coletando um total de 12 características elétricas, porém, a maioria delas foi classificada por fase, o que gerou conjuntos de dados de 27 features para cada registro. Um resumo dos features é mostrado na Tabela 1.
 
 <p align="center">
@@ -117,7 +118,13 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 
 A arquitetura do modelo base vai ser desenvolvida usando PyTorch. A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
 
-**Resultados esperados**
+
+**Cronograma**
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
+</p>
+
+## Resultados e Discussão dos Resultados
 
 Espera-se obter um conjunto de curvas de cargas que representem adequadamente o comportamento real das cargas, tanto daquelas que possuem GDs conectadas quanto aquelas que não possuem esse tipo de geração.
 
@@ -134,11 +141,10 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 * A volatilidade dos perfis de carga diária
 * Estudos de fluxo de carga e perdas no OpenDSS
 
+## Conclusões
 
-## Cronograma
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
-</p>
+
+
 
 ## Referências Bibliográficas
 [1] L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai, "Modeling Daily Load Profiles of Distribution Network for Scenario Generation Using Flow-Based Generative Network," in IEEE Access, vol. 8, pp. 77587-77597, 2020, doi: 10.1109/ACCESS.2020.2989350.
