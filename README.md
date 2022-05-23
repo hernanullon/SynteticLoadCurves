@@ -55,7 +55,9 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 ## Metodologia Proposta
 
 ### Base de dados
-Atualmente, existem cerca de 330 medidores inteligentes instalados em transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP). Os medidores realizam medições a cada 30 segundos, coletando um total de 12 características elétricas, porém, a maioria delas foi classificada por fase, o que gerou conjuntos de dados de 27 features para cada registro. Um resumo dos features é mostrado na Tabela 1.
+Atualmente, existem 324 medidores inteligentes instalados no lado de baixa tensão dos transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP) como parte do Projeto Campus Sutentável. O subprojeto intitulado Mini Centro de Operações tem o objetivo de implantar um minicentro inteligente de dados de consumo e operação de redes elétricas para o Campus Cidade Universitária Zeferino Vaz da Unicamp, através da instalação de medidores inteligentes em todas as unidades consumidoras (faculdades, institutos, laboratórios, núcleos interdisciplinares, administração, etc.) de forma a monitorar o consumo real e diário de cada unidade consumidora (CAMPUS SUSTENTÁVEL).
+
+Os medidores inteligentes instalados realizam medições a cada 30 segundos, coletando um total de 12 características elétricas (_features_). Contudo, algumas dessas _features_ são medidas em cada fase do sistema, produzindo assim um conjunto de dados com 27 _features_ para cada registro. Um resumo dos _features_ é mostrado na Tabela 1.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
@@ -162,3 +164,5 @@ Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
 [2] JAIN, Anjali; MANI, Ashish; SIDDIQUI, Anwar Shahzad. Network architecture for demand response implementation in smart grid. International Journal of System Assurance Engineering and Management, v. 10, n. 6, p. 1389-1402, 2019.
 
 [3] RANA, Mashud; KOPRINSKA, Irena; AGELIDIS, Vassilios G. Solar power forecasting using weather type clustering and ensembles of neural networks. In: 2016 International Joint Conference on Neural Networks (IJCNN). IEEE, 2016. p. 4962-4969.
+
+[4] "Mini Centro de Operações", Campus Sustentável, 2019, https://www.campus-sustentavel.unicamp.br/cos/ Acessado 23 Maio 2022.
