@@ -13,20 +13,29 @@ oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dr
 | Luís H. Tenorio | 156449  | Eng. Eletricisita |
 | Hernan Ullon    | 262729  | Eng. de Computação |
 
+## Resumo (Abstract)
 
-## Descrição Resumida do Projeto
-As análises para operação e planejamento em sistemas de distribuição de energia são tipicamente realizadas a partir de curvas de consumo típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas típicas para quatro diferentes tipos de UCs. Vale ressaltar que esse consumo se refere ao total de energia que uma dada UC demanda da concessionária, valor que é de fato utilizado para a operação e planejamento.
+
+
+## Descrição do Problema/Motivação
+As análises para operação e planejamento em sistemas de distribuição de energia elétrica são tipicamente realizadas a partir de curvas de carga típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas de carga típicas para quatro diferentes tipos de UCs. Vale ressaltar que essas curvas de carga se referem ao consumo total de energia que uma dada UC demanda da concessionária, valor que é de fato utilizado para a operação e planejamento.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/13198_2019_891_Fig5_HTML.png" align="middle" width="700">
 </p>
 
-Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. A esse tipo de geração dá-se o nome de Geração Distribuída (GD), geração esta que tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia. Podendo estar conectadas diretamente aos consumidores, GDs possuem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico ao longo de um dia ensolarado, de um dia nublado e de um dia chuvoso. 
+Figura 1: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) comerciais (JAIN; MANI; SIDDIQUI, 2019)
+
+Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. Interconectadas à subestação, ao longo do sistema de distribuição ou diretamente ao consumidor, com tamanho limitado, tipicamente inferior a 10MW, essa geração de energia recebe o nome de Geração Distribuída (GD) (BARKER; DE MELLO, 2000), geração esta que tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia por apresentarem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico (PV) ao longo de um dia ensolarado, de um dia nublado e de um dia chuvoso. 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/Solar-power-output-for-different-weather-conditions-a-sunny-day-20-April-2013-cloudy.png" align="middle" width="400">
+	  <figcaption>
+  labelname :: This is the label text.
+  </figcaption>
 </p>
 
+Figura 2: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) comerciais (JAIN; MANI; SIDDIQUI, 2019)
 
 Como parte da demanda de potência de uma UC que possui um painel fotovoltaico provém deste, e como a potência de saída do painel é influenciada pelas condições climáticas, a demanda de potência (consumo) desta UC é alterada de acordo com as condições climáticas, sendo impossível atribuir uma única curva de consumo típica a esta UC, inviabilizando as análises de operação e planejamento.
 
@@ -140,3 +149,8 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 
 [4] Pan, Zhixin, Jianming Wang, Wenlong Liao, Haiwen Chen, Dong Yuan, Weiping Zhu, Xin Fang, and Zhen Zhu. 2019. "Data-Driven EV Load Profiles Generation Using a Variational Auto-Encoder" Energies 12, no. 5: 849. https://doi.org/10.3390/en12050849 
 
+
+[1] BARKER, P.P.; DE MELLO, R.W. Determining the impact of distributed generation on power systems. I. Radial distribution systems. In: 2000 Power Engineering
+Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
+
+[2] JAIN, Anjali; MANI, Ashish; SIDDIQUI, Anwar Shahzad. Network architecture for demand response implementation in smart grid. International Journal of System Assurance Engineering and Management, v. 10, n. 6, p. 1389-1402, 2019.
