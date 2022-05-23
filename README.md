@@ -9,9 +9,9 @@ oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dr
 
 |Nome  | RA | Especialização|
 |--|--|--|
-| Rosero Karen  | 264373  | Eng. Telecomunicações e Telemática|
-| Tenorio Luis  | 156449  | Eng. Eletricisita|
-| Ullon Hernan  | 262729  | Eng. de Computação|
+| Karen Rosero    | 264373  | Eng. Telecomunicações e Telemática |
+| Luís H. Tenorio | 156449  | Eng. Eletricisita |
+| Hernan Ullon    | 262729  | Eng. de Computação |
 
 
 ## Descrição Resumida do Projeto
