@@ -57,7 +57,7 @@ https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFN
 Atualmente, existem cerca de 330 medidores inteligentes instalados em transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP). Os medidores realizam medições a cada 30 segundos, coletando um total de 12 características elétricas, porém, a maioria delas foi classificada por fase, o que gerou conjuntos de dados de 27 features para cada registro. Um resumo dos features é mostrado na Tabela 1.
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/BaseDados.jpeg" align="middle" width="600">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
 </p>
 
 
@@ -111,7 +111,7 @@ Os autores em [1] comparam as três abordagens, obtendo melhores resultados com 
 O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura ?, uma série de funções reversíveis f(.) mapeiam as amostras reais x para um espaço latente z que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa f1(z).
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/NICE.png" align="middle" width="600">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/NICE.png" align="middle" width="600">
 </p>
 
 
@@ -122,7 +122,7 @@ A arquitetura do modelo base vai ser desenvolvida usando PyTorch. A nossa propos
 Espera-se obter um conjunto de curvas de cargas que representem adequadamente o comportamento real das cargas, tanto daquelas que possuem GDs conectadas quanto aquelas que não possuem esse tipo de geração.
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/results.png" align="middle" width="900">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/results.png" align="middle" width="900">
 </p>
 
 **Proposta de avaliação**
@@ -137,7 +137,7 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 
 ## Cronograma
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/cronograma.png" align="middle" width="900">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
 </p>
 
 ## Referências Bibliográficas
