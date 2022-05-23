@@ -28,15 +28,14 @@ As análises para operação e planejamento em sistemas de distribuição de ene
 </p>
 
 
-<!-- Figura 1: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) comerciais (JAIN; MANI; SIDDIQUI, 2019) -->
-
 Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. Interconectadas à subestação, ao longo do sistema de distribuição ou diretamente ao consumidor, com tamanho limitado, tipicamente inferior a 10MW, essa geração de energia recebe o nome de Geração Distribuída (GD) (BARKER; DE MELLO, 2000), geração esta que tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia por apresentarem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico (PV) ao longo de um dia ensolarado, de um dia nublado e de um dia chuvoso. 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/Solar-power-output-for-different-weather-conditions-a-sunny-day-20-April-2013-cloudy.png" align="middle" width="400">
+	<figcaption>
+  	Figura 2: Potência de saída de um PV para diferentes condições climáticas: um dia ensolarado (20 de abril de 2013), um dia nublado (15 de abril de 2013) e um dia chuvoso (13 de abril de 2013) (RANA; KOPRINSKA; AGELIDIS, 2016)
+  	</figcaption>
 </p>
-
-Figura 2: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) comerciais (JAIN; MANI; SIDDIQUI, 2019)
 
 Como parte da demanda de potência de uma UC que possui um painel fotovoltaico provém deste, e como a potência de saída do painel é influenciada pelas condições climáticas, a demanda de potência (consumo) desta UC é alterada de acordo com as condições climáticas, sendo impossível atribuir uma única curva de consumo típica a esta UC, inviabilizando as análises de operação e planejamento.
 
@@ -155,3 +154,5 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
 
 [2] JAIN, Anjali; MANI, Ashish; SIDDIQUI, Anwar Shahzad. Network architecture for demand response implementation in smart grid. International Journal of System Assurance Engineering and Management, v. 10, n. 6, p. 1389-1402, 2019.
+
+[3] RANA, Mashud; KOPRINSKA, Irena; AGELIDIS, Vassilios G. Solar power forecasting using weather type clustering and ensembles of neural networks. In: 2016 International Joint Conference on Neural Networks (IJCNN). IEEE, 2016. p. 4962-4969.
