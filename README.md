@@ -20,9 +20,18 @@ oferecida no primeiro semestre de 2022, na Unicamp, sob supervisão da Profa. Dr
 ## Descrição do Problema/Motivação
 As análises para operação e planejamento em sistemas de distribuição de energia elétrica são tipicamente realizadas a partir de curvas de carga típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas de carga típicas para quatro diferentes tipos de UCs. Vale ressaltar que essas curvas de carga se referem ao consumo total de energia que uma dada UC demanda da concessionária, valor que é de fato utilizado para a operação e planejamento.
 
-<p align="center">
+<!-- <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/13198_2019_891_Fig5_HTML.png" align="middle" width="700">
-</p>
+</p> -->
+
+
+<figure>
+  <img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/13198_2019_891_Fig5_HTML.png" align="middle" width="700">
+  <figcaption>
+  labelname :: This is the label text.
+  </figcaption>
+</figure>
+
 
 Figura 1: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) comerciais (JAIN; MANI; SIDDIQUI, 2019)
 
@@ -30,9 +39,6 @@ Nos últimos anos tem surgido uma nova tendência de geração de energia que, d
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/figuras/Solar-power-output-for-different-weather-conditions-a-sunny-day-20-April-2013-cloudy.png" align="middle" width="400">
-	  <figcaption>
-  labelname :: This is the label text.
-  </figcaption>
 </p>
 
 Figura 2: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) comerciais (JAIN; MANI; SIDDIQUI, 2019)
