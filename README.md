@@ -145,14 +145,10 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 * A volatilidade dos perfis de carga diária
 * Estudos de fluxo de carga e perdas no OpenDSS
 
-<!-- ### Cronograma
-A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
-
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
-</p> -->
 
 ## Resultados e Discussão dos Resultados
+
+Até a presente data não foram realizadas simulações com o banco de dados, apenas testes e explorações do código NICE. ALém disso, por conta dos resultados encorajadores apresentado em ( L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai,), o modelo NICE se mostra como o mais promissor.
 
 Espera-se obter um conjunto de curvas de cargas que representem adequadamente o comportamento real das cargas, tanto daquelas que possuem GDs conectadas quanto aquelas que não possuem esse tipo de geração.
 
