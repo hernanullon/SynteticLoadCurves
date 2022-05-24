@@ -98,6 +98,10 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
     <tr>
         <td>apparentPowerC</td> <td>powerFactorC</td> <td>voltageC</td> 
     </tr>
+	<caption>
+  	Tabela 1: Características elétricas (_features_) coletadas pelos medidores inteligentes.
+  	</caption>
+	
 </table>
 </div>
 
