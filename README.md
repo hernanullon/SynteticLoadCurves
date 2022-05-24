@@ -166,7 +166,14 @@ A proposta inclui o pré-processamento e análise da base de dados, assim como a
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
 </p>
 
-De acordo com o cronograma, até a data de entrega desta versão E2 esperava-se ter uma base de dados completamente tratada e pronta para a realização dos estudos com o modelo generativo NICE. Além disso, o cronograma inicial previa uma breve familiarização com o modelo generativo NICE a ser usado no trabalho. Ambos os objetivos foram alcançados, uma vez que tem-se uma base de dados devidamente tratada e pornta para ser usada nos estudos, além de ter sido iniciado os primeiros contatos com o modelo NICE.
+De acordo com o cronograma, até a data de entrega desta versão E2 esperava-se ter uma base de dados completamente tratada e pronta para a realização dos estudos com o modelo generativo NICE. Além disso, o cronograma inicial previa uma breve familiarização com o modelo generativo NICE a ser usado no trabalho, sendo que ambos os objetivos foram alcançados.
+
+Os medidores inteligentes instalados nos transformadores do alimentador BGE06 foram selecionados para serem analisados, uma vez que este alimentador possui tanto o PV quanto a estação de recarga de ônibus elétrico instalados, além de ser o alimentador que possui o modelo elétrico mais confiável para análises de fluxo de carga, um dos critérios de análise da qualidade dos resultados adotada neste trabalho.
+
+Foram geradas curvas de carga com 96 pontos tomados como a média das medições de potência ativa trifásica a cada 15 minutos, sendo que as amostras (curvas de carga diárias) que apresentam dados faltantes foram desconsideradas, e os medidores/transformadores foram agrupados em classes segundo seu perfil de consumo. Por questões associadas a variações no perfil de consumo das UCs da universidade em dias úteis e dias não úteis, optou-se por trabalhar apenas com dias úteis uma vez qeu o consumo nesses dias representa o comportamento típico das UCs. Por fim, medidores com dados
+
+Sobre o modelo NICE,... (COMPLETAR ESSA PARTE)
+
 
 
 ## Referências Bibliográficas
