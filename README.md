@@ -132,9 +132,24 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/NICE.png" align="middle" width="600">
 </p>
 
-### Ferramentas utilizadas
+### NICE: Estimativa não-linear de componentes independentes
 
-A arquitetura do modelo base vai ser desenvolvida usando PyTorch. 
+Descrever a metodologia geral do NICE. Podemos tirar a figura do artigo que tínhamos colocado aqui e deixar só essa aqui.
+
+
+
+### Ferramentas utilizadas
+A arquitetura do modelo está sendo desenvolvida utilizando TensorFlow 2.6.0. Está baseada no repositório disponível em: https://github.com/bojone/flow/blob/master/nice.py, com modificações nos parâmetros da rede que serão explicados nas seções seguintes. 
+
+### Configuração de parâmetros
+
+A rede recebe dados de curvas de carga que contêm 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. 
+Por enquanto estão sendo utilizadas exclusivamente as amostras do gerador ‘1000172’ que apresentam um perfil que poderia ser considerado como de um estabelecimento comercial. Assim, temos 400 amostras de treinamento e 70 de validação. É importante mencionar que os dados de mais transformadores serão utilizados na próxima etapa do projeto. 
+
+A rede contém 4 camadas de acoplamento aditivo tanto para transformação quanto para a inversão. Foram usadas camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Selecionamos um tamanho de batch de 32 amostras e treinamos a rede durante 400 épocas, salvando o melhor modelo obtido. 
+
+O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido. 
+
 
 ### Proposta de avaliação
 
