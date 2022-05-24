@@ -23,22 +23,22 @@ https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFN
 
 
 ## Descrição do Problema/Motivação
-As análises para operação e planejamento em sistemas de distribuição de energia elétrica são tipicamente realizadas a partir de curvas de carga típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas de carga típicas para quatro diferentes tipos de UCs. Vale ressaltar que essas curvas de carga se referem demanda medida de cada UC (ANEEL,2010), valor que é de fato utilizado para a faturamento, operação e planejamento.
+As análises para operação e planejamento em sistemas de distribuição de energia elétrica são tipicamente realizadas a partir de curvas de carga típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas de carga típicas para quatro diferentes tipos de UCs. Vale ressaltar que essas curvas de carga se referem demanda medida de cada UC [1], valor que é de fato utilizado para a faturamento, operação e planejamento.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/13198_2019_891_Fig5_HTML.png" align="middle" width="700">
 	  <figcaption>
-  	Figura 1: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) 	comerciais (JAIN; MANI; SIDDIQUI, 2019).
+  	Figura 1: Curvas de carga típicas para consumidores (a) residenciais, (b) industriais (um turno de trabalho), (c) industriais (dois turnos de trabalho) e (d) 	comerciais [2].
   	</figcaption>
 </p>
 
 
-Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. Interconectadas à subestação, ao longo do sistema de distribuição ou diretamente ao consumidor, com tamanho limitado, tipicamente inferior a 10MW, essa geração de energia recebe o nome de Geração Distribuída (GD) (BARKER; DE MELLO, 2000). Este tipo de geração tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia por apresentarem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico (PV) para diferentes condições climáticas. 
+Nos últimos anos tem surgido uma nova tendência de geração de energia que, diferente da tradicional geração centralizada, ocorre de forma distribuída através do uso de fontes de energia renováveis como, por exemplo, células fotovoltaicas. Interconectadas à subestação, ao longo do sistema de distribuição ou diretamente ao consumidor, com tamanho limitado, tipicamente inferior a 10MW, essa geração de energia recebe o nome de Geração Distribuída (GD) [3]. Este tipo de geração tem representado um grande desafio para a operação e planejamento de sistemas de distribuição de energia por apresentarem uma natureza intermitente e estocástica, como pode ser observado na Figura 2, que apresenta a potência de saída de um painel fotovoltaico (PV) para diferentes condições climáticas. 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Solar-power-output-for-different-weather-conditions-a-sunny-day-20-April-2013-cloudy.png" align="middle" width="400">
 	<figcaption>
-  	Figura 2: Potência de saída de um PV para diferentes condições climáticas: um dia ensolarado (20 de abril de 2013), um dia nublado (15 de abril de 2013) e um dia chuvoso (13 de abril de 2013) (RANA; KOPRINSKA; AGELIDIS, 2016)
+  	Figura 2: Potência de saída de um PV para diferentes condições climáticas: um dia ensolarado (20 de abril de 2013), um dia nublado (15 de abril de 2013) e um dia chuvoso (13 de abril de 2013) [4].
   	</figcaption>
 </p>
 
@@ -55,7 +55,7 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 ## Metodologia Proposta
 
 ### Base de dados
-Atualmente, existem 324 medidores inteligentes instalados no lado de baixa tensão dos transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP) como parte do Projeto Campus Sutentável. O subprojeto intitulado Mini Centro de Operações tem o objetivo de implantar um minicentro inteligente de dados de consumo e operação de redes elétricas para o Campus Cidade Universitária Zeferino Vaz da Unicamp, através da instalação de medidores inteligentes em todas as unidades consumidoras (faculdades, institutos, laboratórios, núcleos interdisciplinares, administração, etc.) de forma a monitorar o consumo real e diário de cada unidade consumidora (CAMPUS SUSTENTÁVEL, 2019).
+Atualmente, existem 324 medidores inteligentes instalados no lado de baixa tensão dos transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP) como parte do Projeto Campus Sutentável. O subprojeto intitulado Mini Centro de Operações tem o objetivo de implantar um minicentro inteligente de dados de consumo e operação de redes elétricas para o Campus Cidade Universitária Zeferino Vaz da Unicamp, através da instalação de medidores inteligentes em todas as unidades consumidoras (faculdades, institutos, laboratórios, núcleos interdisciplinares, administração, etc.) de forma a monitorar o consumo real e diário de cada unidade consumidora [5].
 
 No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura..
 
@@ -105,9 +105,9 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
 </table>
 </div>
 
-No banco de dados utilizado no trabalho, os medidores são agrupados em classes definidas com base na análise das curvas de carga geradas: salas de aula, laboratórios, GMU, RU, Iluminação pública, estação de recarga do ônibus elétrico e PV .... (EDITAR COM DADOS DA WALQUIRIA). Na primeira parte do trabalho a rede será treinada com cada uma das classes individualmente. Na segunda parte, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Por fim, na terceira parte, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode aumentar a dificuldade do modelo em aprender como gerar tais curvas.
+No banco de dados utilizado no trabalho, os medidores são agrupados em classes definidas com base na análise das curvas de carga geradas: salas de aula, laboratórios, GMU, RU, Iluminação pública, estação de recarga do ônibus elétrico e PV. Na primeira parte do trabalho a rede será treinada com cada uma das classes individualmente. Na segunda parte, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Por fim, na terceira parte, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode aumentar a dificuldade do modelo em aprender como gerar tais curvas.
 
-Apesar de os medidores coletarem dados a cada 30 segundos, segundo a Resolução Normativa ANEEL Nº 414 DE 09/09/2010, demanda medida é a maior demanda de potência ativa, verificada por medição, integralizada em intervalos de 15 (quinze) minutos durante o período de faturamento (ANEEL, 2010). Assim, para obter curvas com 96 a partir dos dados coletados pelos medidores, a média de todas as medições coletadas a cada 15 minutos é utilizada como referência. Nesta etapa da análise, medidores que possuem dados incompletos serão desconsiderados.
+Apesar de os medidores coletarem dados a cada 30 segundos, segundo a Resolução Normativa ANEEL Nº 414 DE 09/09/2010, demanda medida é a maior demanda de potência ativa, verificada por medição, integralizada em intervalos de 15 (quinze) minutos durante o período de faturamento [1]. Assim, para obter curvas com 96 a partir dos dados coletados pelos medidores, a média de todas as medições coletadas a cada 15 minutos é utilizada como referência. Nesta etapa da análise, medidores que possuem dados incompletos serão desconsiderados.
 
 Outra consideração a ser feita sobre os dados utilizados é a diferenciação entre o perfil de consumo em dias úteis e o perfil de consumo em dias não úteis. Uma vez que nem todas as unidades da UNICAMP funcionam nos mesmos horários nos dias de semana e aos finais de semana, o perfil de consumo obtido para uma dada UC pode variar muito entre os dois cenários. Por exemplo, um prédio comercial que tem um perfil de consumo típico ao longo da semana e que não abre aos finais de semana pode eventualmente ser classificado como uma sala de aula, que também não funciona aos finais de semana. Para simplificar as análises e evitar que registros de classes diferentes sejam confundidos, apenas as medições coletadas em dias úteis são utilizadas por caracterizarem melhor o comportamento esperado das UCs.
 
@@ -124,7 +124,7 @@ A utilização de modelos generativos permite utilizar grandes volumes de dados 
 	
 * Autoencoders Variacionais [9]
 
-Os autores em [6] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês Non-linear independent component estimation).
+Os autores em [6] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês _Non-linear Independent Component Estimation_).
 
 
 ### NICE: Estimativa não-linear de componentes independentes
@@ -139,7 +139,7 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 </p> -->
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle" width="400">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle" width="600">
 	<figcaption>
   	Figura 4: Arquitetura do modelo NICE adotado neste trabalho (Desenvolvimento próprio).
   	</figcaption>
@@ -201,16 +201,16 @@ Sobre o modelo NICE,... (COMPLETAR ESSA PARTE)
 
 
 ## Referências Bibliográficas
-[1] BARKER, P.P.; DE MELLO, R.W. Determining the impact of distributed generation on power systems. I. Radial distribution systems. In: 2000 Power Engineering
-Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
+[1] ANEEL. Resolução Normativa nº 414, de 09 de setembro de 2010. Agência Nacional de Energia Elétrica, Rio de Janeiro.
 
 [2] JAIN, Anjali; MANI, Ashish; SIDDIQUI, Anwar Shahzad. Network architecture for demand response implementation in smart grid. International Journal of System Assurance Engineering and Management, v. 10, n. 6, p. 1389-1402, 2019.
 
-[3] RANA, Mashud; KOPRINSKA, Irena; AGELIDIS, Vassilios G. Solar power forecasting using weather type clustering and ensembles of neural networks. In: 2016 International Joint Conference on Neural Networks (IJCNN). IEEE, 2016. p. 4962-4969.
+[3] BARKER, P.P.; DE MELLO, R.W. Determining the impact of distributed generation on power systems. I. Radial distribution systems. In: 2000 Power Engineering
+Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
 
-[4] "Mini Centro de Operações", Campus Sustentável, 2019, https://www.campus-sustentavel.unicamp.br/cos/ Acessado 23 Maio 2022.
+[4] RANA, Mashud; KOPRINSKA, Irena; AGELIDIS, Vassilios G. Solar power forecasting using weather type clustering and ensembles of neural networks. In: 2016 International Joint Conference on Neural Networks (IJCNN). IEEE, 2016. p. 4962-4969.
 
-[5] ANEEL. Resolução Normativa nº 414, de 09 de setembro de 2010. Agência Nacional de Energia Elétrica, Rio de Janeiro.
+[5] "Mini Centro de Operações", Campus Sustentável, 2019, https://www.campus-sustentavel.unicamp.br/cos/ Acessado 23 Maio 2022.
 
 [6] L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai, "Modeling Daily Load Profiles of Distribution Network for Scenario Generation Using Flow-Based Generative Network," in IEEE Access, vol. 8, pp. 77587-77597, 2020, doi: 10.1109/ACCESS.2020.2989350.
 
