@@ -160,12 +160,13 @@ Espera-se obter um conjunto de curvas de cargas que representem adequadamente o 
 
 ## Conclusões
 
-A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+A proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
 </p>
 
+De acordo com o cronograma, até a data de entrega desta versão E2 esperava-se ter uma base de dados completamente tratada e pronta para a realização dos estudos com o modelo generativo NICE. Além disso, o cronograma inicial previa uma breve familiarização com o modelo generativo NICE a ser usado no trabalho. Ambos os objetivos foram alcançados, uma vez que tem-se uma base de dados devidamente tratada e pornta para ser usada nos estudos, além de ter sido iniciado os primeiros contatos com o modelo NICE.
 
 
 ## Referências Bibliográficas
