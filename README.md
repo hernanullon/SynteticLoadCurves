@@ -23,7 +23,7 @@ https://docs.google.com/presentation/d/1ZwE6jB5jJDbURiT_O3IdAIyou7ioP8jT-ngvxeFN
 
 
 ## Descrição do Problema/Motivação
-As análises para operação e planejamento em sistemas de distribuição de energia elétrica são tipicamente realizadas a partir de curvas de carga típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas de carga típicas para quatro diferentes tipos de UCs. Vale ressaltar que essas curvas de carga se referem ao consumo total de energia que uma dada UC demanda da concessionária, valor que é de fato utilizado para a operação e planejamento.
+As análises para operação e planejamento em sistemas de distribuição de energia elétrica são tipicamente realizadas a partir de curvas de carga típicas que dependem da natureza das cargas de cada unidade consumidora (UC). A Figura 1 apresenta curvas de carga típicas para quatro diferentes tipos de UCs. Vale ressaltar que essas curvas de carga se referem demanda medida de cada UC (ANEEL,2010), valor que é de fato utilizado para a faturamento, operação e planejamento.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/13198_2019_891_Fig5_HTML.png" align="middle" width="700">
