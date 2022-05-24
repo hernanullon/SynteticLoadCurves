@@ -126,16 +126,23 @@ A utilização de modelos generativos permite utilizar grandes volumes de dados 
 
 Os autores em [6] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês Non-linear independent component estimation).
 
-O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura ?, uma série de funções reversíveis f(.) mapeiam as amostras reais x para um espaço latente z que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
+
+### NICE: Estimativa não-linear de componentes independentes
+
+<!-- Descrever a metodologia geral do NICE. Podemos tirar a figura do artigo que tínhamos colocado aqui e deixar só essa aqui. -->
+
+O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura 4, uma série de funções reversíveis $f(.)$ mapeiam as amostras reais $x$ para um espaço latente $z$ que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/NICE.png" align="middle" width="600">
 </p>
 
-### NICE: Estimativa não-linear de componentes independentes
-
-Descrever a metodologia geral do NICE. Podemos tirar a figura do artigo que tínhamos colocado aqui e deixar só essa aqui.
-
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle" width="400">
+	<figcaption>
+  	Figura 4: Arquitetura do modelo NICE adotado neste trabalho (Desenvolvimento próprio).
+  	</figcaption>
+</p>
 
 
 ### Ferramentas utilizadas
