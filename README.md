@@ -175,7 +175,7 @@ Os algoritmos de avaliação ainda não foram implementados. Por tal motivo, ain
 A partir da análise dos dados de apenas um dos medidores foi possível gerar as curvas de carga sintéticas (Figura da direita) que, visualmente, têm o mesmo perfil das curvas de carga reais (Figura da esquerda). 
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/curva_tipica.png" align="middle">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/gerada_tipica.png" align="middle">
 </p>
 
 
