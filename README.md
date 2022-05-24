@@ -133,9 +133,10 @@ Os autores em [6] comparam as três abordagens, obtendo melhores resultados com 
 
 O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura 4, uma série de funções reversíveis $f(.)$ mapeiam as amostras reais $x$ para um espaço latente $z$ que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
 
+<!-- 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/NICE.png" align="middle" width="600">
-</p>
+</p> -->
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle" width="400">
