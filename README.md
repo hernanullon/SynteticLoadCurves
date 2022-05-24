@@ -58,7 +58,7 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 Atualmente, existem 324 medidores inteligentes instalados no lado de baixa tensão dos transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP) como parte do Projeto Campus Sutentável. O subprojeto intitulado Mini Centro de Operações tem o objetivo de implantar um minicentro inteligente de dados de consumo e operação de redes elétricas para o Campus Cidade Universitária Zeferino Vaz da Unicamp, através da instalação de medidores inteligentes em todas as unidades consumidoras (faculdades, institutos, laboratórios, núcleos interdisciplinares, administração, etc.) de forma a monitorar o consumo real e diário de cada unidade consumidora (CAMPUS SUSTENTÁVEL).
 
 
-Os medidores inteligentes instalados realizam medições a cada 30 segundos, coletando um total de 12 características elétricas (_features_). Contudo, algumas dessas _features_ são medidas em cada fase do sistema, produzindo assim um conjunto de dados com 27 _features_ para cada registro. Um resumo dos _features_ é mostrado na Tabela 1.
+Os medidores inteligentes instalados realizam medições a cada 30 segundos, coletando um total de 12 características elétricas (_features_). Contudo, algumas dessas _features_ são medidas em cada fase do sistema, produzindo assim um conjunto de dados com 27 _features_ para cada registro. Um resumo das _features_ coletadas pelos medidores é mostrado na Tabela 1.
 
 
 <div align="center">
@@ -97,7 +97,7 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
 Com base no objetivo do estudo de curvas de carga, nossas variáveis de foco serão as potências ativa e reativa de cada transformador de distribuição. Devido à distribuição de carga nos transformadores e para simplificação, este trabalho considerou os seguintes parâmetros: threephaseActivePower, threephaseReactivePower.
 
 
-No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para análises elétricas. Tendo em consideração essas características, apenas os dados relacionados ao alimentador BGE06 serão utilizados no trabalho. A Figura 3 ilustra a topologia do alimentador escolhido.
+No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
