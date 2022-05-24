@@ -118,15 +118,15 @@ Outra consideração a ser feita sobre os dados utilizados é a diferenciação 
 A utilização de modelos generativos permite utilizar grandes volumes de dados de treinamento não rotulados, permitindo gerar diretamente novos cenários baseados em dados históricos, sem especificar explicitamente um modelo ou as distribuições de probabilidade. Com o uso deste tipo de aprendizado não supervisionado, evita-se o processo de etiquetado manual dos dados. Três modelos generativos têm sido usados para gerar curvas de carga:
 
 	
-* Redes generativas baseadas em fluxo [1]
+* Redes generativas baseadas em fluxo [6]
 	
-* Redes adversárias generativas (GANs) [2,3]
+* Redes adversárias generativas (GANs) [7,8]
 	
-* Autoencoders Variacionais [4]
+* Autoencoders Variacionais [9]
 
-Os autores em [1] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês Non-linear independent component estimation).
+Os autores em [6] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês Non-linear independent component estimation).
 
-O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura ?, uma série de funções reversíveis f(.) mapeiam as amostras reais x para um espaço latente z que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa f1(z).
+O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura ?, uma série de funções reversíveis f(.) mapeiam as amostras reais x para um espaço latente z que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/NICE.png" align="middle" width="600">
@@ -177,15 +177,6 @@ Sobre o modelo NICE,... (COMPLETAR ESSA PARTE)
 
 
 ## Referências Bibliográficas
-[1] L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai, "Modeling Daily Load Profiles of Distribution Network for Scenario Generation Using Flow-Based Generative Network," in IEEE Access, vol. 8, pp. 77587-77597, 2020, doi: 10.1109/ACCESS.2020.2989350.
-
-[2] Tajer, A., Perlaza, S., & Poor, H. (Eds.). (2021). Advanced Data Analytics for Power Systems. Cambridge: Cambridge University Press. doi:10.1017/9781108859806
-
-[3] C. Jiang, Y. Mao, Y. Chai, M. Yu and S. Tao, "Scenario Generation for Wind Power Using Improved Generative Adversarial Networks," in IEEE Access, vol. 6, pp. 62193-62203, 2018, doi: 10.1109/ACCESS.2018.2875936.
-
-[4] Pan, Zhixin, Jianming Wang, Wenlong Liao, Haiwen Chen, Dong Yuan, Weiping Zhu, Xin Fang, and Zhen Zhu. 2019. "Data-Driven EV Load Profiles Generation Using a Variational Auto-Encoder" Energies 12, no. 5: 849. https://doi.org/10.3390/en12050849 
-
-
 [1] BARKER, P.P.; DE MELLO, R.W. Determining the impact of distributed generation on power systems. I. Radial distribution systems. In: 2000 Power Engineering
 Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
 
@@ -196,3 +187,11 @@ Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
 [4] "Mini Centro de Operações", Campus Sustentável, 2019, https://www.campus-sustentavel.unicamp.br/cos/ Acessado 23 Maio 2022.
 
 [5] ANEEL. Resolução Normativa nº 414, de 09 de setembro de 2010. Agência Nacional de Energia Elétrica, Rio de Janeiro.
+
+[6] L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai, "Modeling Daily Load Profiles of Distribution Network for Scenario Generation Using Flow-Based Generative Network," in IEEE Access, vol. 8, pp. 77587-77597, 2020, doi: 10.1109/ACCESS.2020.2989350.
+
+[7] Tajer, A., Perlaza, S., & Poor, H. (Eds.). (2021). Advanced Data Analytics for Power Systems. Cambridge: Cambridge University Press. doi:10.1017/9781108859806
+
+[8] C. Jiang, Y. Mao, Y. Chai, M. Yu and S. Tao, "Scenario Generation for Wind Power Using Improved Generative Adversarial Networks," in IEEE Access, vol. 6, pp. 62193-62203, 2018, doi: 10.1109/ACCESS.2018.2875936.
+
+[9] Pan, Zhixin, Jianming Wang, Wenlong Liao, Haiwen Chen, Dong Yuan, Weiping Zhu, Xin Fang, and Zhen Zhu. 2019. "Data-Driven EV Load Profiles Generation Using a Variational Auto-Encoder" Energies 12, no. 5: 849. https://doi.org/10.3390/en12050849 
