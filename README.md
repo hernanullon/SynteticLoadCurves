@@ -194,7 +194,7 @@ Os medidores inteligentes instalados nos transformadores do alimentador BGE06 fo
 
 Foram geradas curvas de carga com 96 pontos tomados como a média das medições de potência ativa trifásica a cada 15 minutos, sendo que as amostras (curvas de carga diárias) que apresentam dados faltantes foram desconsideradas, e os medidores/transformadores foram agrupados em classes segundo seu perfil de consumo. Por questões associadas a variações no perfil de consumo das UCs da universidade em dias úteis e dias não úteis, optou-se por trabalhar apenas com dias úteis uma vez qeu o consumo nesses dias representa o comportamento típico das UCs. Por fim, medidores com dados
 
-Sobre o modelo NICE,... (COMPLETAR ESSA PARTE)
+Os primeiros testes com o modelo NICE se mostraram promissores, sendo que foi possível obter uma curva de carga sintética visulamente muito próxima da curva de consumo típica para um dado medidor com características comerciais.
 
 
 
