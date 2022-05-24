@@ -172,12 +172,10 @@ Os algoritmos de avaliação ainda não foram implementados. Por tal motivo, ain
 
 ## Resultados e Discussão dos Resultados
 
-Até a presente data não foram realizadas simulações com o banco de dados, apenas testes e explorações do código NICE. ALém disso, por conta dos resultados encorajadores apresentado em ( L. Ge, W. Liao, S. Wang, B. Bak-Jensen and J. R. Pillai,), o modelo NICE se mostra como o mais promissor.
-
-Espera-se obter um conjunto de curvas de cargas que representem adequadamente o comportamento real das cargas, tanto daquelas que possuem GDs conectadas quanto aquelas que não possuem esse tipo de geração.
+A partir da análise dos dados de apenas um dos medidores foi possível gerar as curvas de carga sintéticas (Figura da direita) que, visualmente, têm o mesmo perfil das curvas de carga reais (Figura da esquerda). 
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/results.png" align="middle" width="900">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/curva_tipica.png" align="middle">
 </p>
 
 
