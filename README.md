@@ -128,14 +128,25 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/NICE.png" align="middle" width="600">
 </p>
 
+### Ferramentas utilizadas
 
-A arquitetura do modelo base vai ser desenvolvida usando PyTorch. A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+A arquitetura do modelo base vai ser desenvolvida usando PyTorch. 
 
+### Proposta de avaliação
 
-**Cronograma**
+Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras geradas e as reais:
+* Função de autocorrelação
+* Coeficiente de correlação de Pearson
+* Curva de duração da curva de consumo 
+* A volatilidade dos perfis de carga diária
+* Estudos de fluxo de carga e perdas no OpenDSS
+
+<!-- ### Cronograma
+A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
-</p>
+</p> -->
 
 ## Resultados e Discussão dos Resultados
 
@@ -145,17 +156,15 @@ Espera-se obter um conjunto de curvas de cargas que representem adequadamente o 
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/results.png" align="middle" width="900">
 </p>
 
-**Proposta de avaliação**
 
-Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras geradas e as reais:
-* Função de autocorrelação
-* Coeficiente de correlação de Pearson
-* Curva de duração da curva de consumo 
-* A volatilidade dos perfis de carga diária
-* Estudos de fluxo de carga e perdas no OpenDSS
 
 ## Conclusões
 
+A nossa proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
+</p>
 
 
 
