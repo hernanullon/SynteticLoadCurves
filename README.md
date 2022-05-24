@@ -57,8 +57,16 @@ O objetivo deste projeto é aplicar Modelos Generativos Profundos para gerar dif
 ### Base de dados
 Atualmente, existem 324 medidores inteligentes instalados no lado de baixa tensão dos transformadores de distribuição na Universidade Estadual de Campinas (UNICAMP) como parte do Projeto Campus Sutentável. O subprojeto intitulado Mini Centro de Operações tem o objetivo de implantar um minicentro inteligente de dados de consumo e operação de redes elétricas para o Campus Cidade Universitária Zeferino Vaz da Unicamp, através da instalação de medidores inteligentes em todas as unidades consumidoras (faculdades, institutos, laboratórios, núcleos interdisciplinares, administração, etc.) de forma a monitorar o consumo real e diário de cada unidade consumidora (CAMPUS SUSTENTÁVEL).
 
+No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3.
 
-Os medidores inteligentes instalados realizam medições a cada 30 segundos, coletando um total de 12 características elétricas (_features_). Contudo, algumas dessas _features_ são medidas em cada fase do sistema, produzindo assim um conjunto de dados com 27 _features_ para cada registro. Um resumo das _features_ coletadas pelos medidores é mostrado na Tabela 1.
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
+	<figcaption>
+  	Figura 3: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
+  	</figcaption>
+</p>
+
+Os medidores inteligentes instalados realizam medições a cada 30 segundos, coletando um total de 12 características elétricas (_features_). Contudo, algumas dessas _features_ são medidas em cada fase do sistema, produzindo assim um conjunto de dados com 27 _features_ para cada registro. Um resumo das _features_ coletadas pelos medidores é mostrado na Tabela 1. Dentre todas as _features_ disponíveis, apenas a potência ativa trifásica (threephaseActivePower) será analisada por estar diretamente relacionada ao consumo de cada unidade. Grandezas como potência reativa trifásica e fator de potência podem ser incluídos em análises futuras visando a obtenção de cenários mais completos.
 
 
 <div align="center">
@@ -93,21 +101,15 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
 </table>
 </div>
 
+No banco de dados, os medidores serão agrupados em classes definidas com base na análise das curvas de carga geradas: salas de aula, laboratórios, GMU, RU, Iluminação pública, estação de recarga do ônibus elétrico e PV .... (EDITAR COM DADOS DA WALQUIRIA). Na primeira parte do trabalho a rede será treinada com cada uma das classes individualmente. Sa segunda parte do trabalho, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Na terceira parte do trabalho, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode aumentar a dificuldade do modelo em aprender como gerar tais curvas.
 
-Com base no objetivo do estudo de curvas de carga, nossas variáveis de foco serão as potências ativa e reativa de cada transformador de distribuição. Devido à distribuição de carga nos transformadores e para simplificação, este trabalho considerou os seguintes parâmetros: threephaseActivePower, threephaseReactivePower.
+Apesar de os medidores coletarem dados a cada 30 segundos, é usual que curvas de consumo típicas sejam conpostas por dados coletados a cada 15 minutos, resultando em um conjunto de 96 pontos. Para obter curvas com 96 a partir dos dados coletados pelos medidores, a média de todas as medições coletadas a cada 15 minutos é utilizada como referência. Essa é uma abordagem justa uma vez que, devido a natureza do consumo de energia, espera-se que as cargas não apresentem variações abruptas em seu perfil (REFERENCIA). Medidores que possuem dados incompletos serão desconsiderados na análise.
 
-
-No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3.
-
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
-	<figcaption>
-  	Figura 3: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
-  	</figcaption>
-</p>
+Outra consideração a ser feita sobre os dados utilizados é a diferenciação entre o perfil de consumo em dias úteis e o perfil de consumo em dias não úteis. Uma vez que nem todas as unidades da UNICAMP funcionam nos mesmos horários nos dias de semana e aos finais de semana, o perfil de consumo obtido para uma vez UC pode variar muito entre os dois cenários. Por exemplo, um prédio comercial que tem um perfil de consumo típico ao longo da semana e que não abre aos finais de semana pode eventualmente ser classificado como uma sala de aula, que também não funciona aos finais de semana. Para simplificar as análises e evitar que registros de classes diferentes sejam confundidos, apenas as medições coletadas em dias úteis são utilizadas por caracterizarem melhor o comportamento esperado das UCs.
 
 
-**Abordagens usando modelos generativos**
+
+### Abordagens usando modelos generativos
 
 A utilização de modelos generativos permite utilizar grandes volumes de dados de treinamento não rotulados, permitindo gerar diretamente novos cenários baseados em dados históricos, sem especificar explicitamente um modelo ou as distribuições de probabilidade. Com o uso deste tipo de aprendizado não supervisionado, evita-se o processo de etiquetado manual dos dados. Três modelos generativos têm sido usados para gerar curvas de carga:
 
