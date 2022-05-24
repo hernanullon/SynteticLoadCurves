@@ -139,7 +139,7 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 </p> -->
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle" width="600">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle">
 	<figcaption>
   	Figura 4: Arquitetura do modelo NICE adotado neste trabalho (Desenvolvimento próprio).
   	</figcaption>
