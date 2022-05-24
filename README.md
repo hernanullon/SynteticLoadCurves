@@ -160,6 +160,7 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 * A volatilidade dos perfis de carga diária
 * Estudos de fluxo de carga e perdas no OpenDSS
 
+Os algoritmos de avaliação ainda não foram implementados. Por tal motivo, ainda não podemos julgar analiticamente os resultados. Essa será a pŕoxima etapa do projeto.
 
 ## Resultados e Discussão dos Resultados
 
