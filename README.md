@@ -103,37 +103,25 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 <div align="center">
 <table>
 	<tr>
-	Classe 0 	Laboratório
+	<td>Classe 0 </td> <td>	Laboratório</td> <td>Classe 6</td> <td>	CECOM</td>
 	</tr>
    	 <tr>
-	Classe 1	Administrativo
+	<td>Classe 1</td> <td>	Administrativo</td> <td>Classe 7</td> <td>	Poço</td>
 	</tr>
    	 <tr>
-	Classe 2	Ilu. Pública
+	<td>Classe 2</td> <td>	Ilu. Pública</td> <td>Classe 8</td> <td>	Sala de aula</td>
 	</tr>
    	 <tr>
-	Classe 3	Restaurante
+	<td>Classe 3</td> <td>	Restaurante</td> <td>Classe 9</td> <td>	Eletroposto</td>
 	</tr>
     	<tr>
-	Classe 4	PV
+	<td>Classe 4</td> <td>	PV</td> <td>Classe 10</td> <td>	Biblioteca</td>
 	</tr>
     	<tr>
-	Classe 5	Comercial
+	Classe 5</td> <td>	Comercial</td>
 	</tr>
-    	<tr>
-	Classe 6	CECOM
-	</tr>
-    	<tr>
-	Classe 7	Poço
-	</tr>
-    	<tr>
-	Classe 8	Sala de aula
-	</tr>
-    	<tr>
-	Classe 9	Eletroposto
-	</tr>
-    	<tr>
-	Classe 10	Biblioteca
+    	
+	
 </table>
 </div>
 
