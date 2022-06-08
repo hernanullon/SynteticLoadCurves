@@ -98,7 +98,7 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
 
 Apesar de os medidores coletarem dados a cada 30 segundos, segundo a Resolução Normativa ANEEL Nº 414 DE 09/09/2010, demanda medida é a maior demanda de potência ativa, verificada por medição, integralizada em intervalos de 15 (quinze) minutos durante o período de faturamento [1]. Assim, para obter curvas com 96 pontos a partir dos dados coletados pelos medidores, a média de todas as medições coletadas a cada 15 minutos é utilizada como referência. Nesta etapa da análise, medidores que possuem dados incompletos serão desconsiderados.
 
-No banco de dados utilizado no trabalho, os medidores são agrupados em classes definidas com base na análise das curvas de carga obtidas a partir dos dados coletados. Para tornar possível o agrupamento de curvas de carga de medidores associados a transformadores de diferentes potências nominais num mesmo conjunto, uma normalização a partir do valor máximo de potência ativa trifásica observada para cada dia foi utilizado. Dessa forma garante-se que todas as curvas excursionem num intervalo entre 0 e 1 e que os comportamentos semelhantes para cada classe de carga sejam evidenciados de forma uniforme. As clases obtidas são mostradas na Tabela 2. Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos e, portanto, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5.
+No banco de dados utilizado no trabalho, os medidores são agrupados em classes definidas com base na análise das curvas de carga obtidas a partir dos dados coletados. Para tornar possível o agrupamento de curvas de carga de medidores associados a transformadores de diferentes potências nominais num mesmo conjunto, uma normalização a partir do valor máximo de potência ativa trifásica observada para cada dia foi utilizado. Dessa forma garante-se que todas as curvas excursionem num intervalo entre 0 e 1 e que os comportamentos semelhantes para cada classe de carga sejam evidenciados de forma uniforme. As clases obtidas são mostradas na Tabela 2.
 
 <div align="center">
 <table>
@@ -126,6 +126,16 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 </table>
 </div>
 
+
+Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos e, portanto, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5. As Figuras apresentam as curvas medidas em preto, com a curva média em vermelho, a curva média mais três desvios-padrão em vermelho tracejado e a curva média menos um desvio-padrão em azul tracejado. As curvas medidas que ficam de fora deste intervalo de desvios-padrão são destacadas em verde e não são levadas em consideração nas análises.
+
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/0.png" align="middle">
+	<figcaption>
+  	Figura 3: Curvas de carga para a classe 0 (Desenvolvimento próprio).
+  	</figcaption>
+</p>
 
 Na primeira parte do trabalho, a rede será treinada com cada uma das classes individualmente. Na segunda parte, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Por fim, na terceira parte, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode levar o modelo generativo a apresentar dificuldades em aprender a distribuição destas curvas.
 
