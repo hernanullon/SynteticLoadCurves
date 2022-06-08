@@ -143,7 +143,7 @@ Outra consideração a ser feita sobre os dados utilizados é a diferenciação 
 
 ### Abordagens usando modelos generativos
 
-A utilização de modelos generativos permite utilizar grandes volumes de dados de treinamento não rotulados, permitindo gerar diretamente novos cenários baseados em dados históricos, sem especificar explicitamente um modelo ou as distribuições de probabilidade. Com o uso deste tipo de aprendizado não supervisionado, evita-se o processo de etiquetado manual dos dados. Três modelos generativos têm sido usados para gerar curvas de carga:
+A utilização de modelos generativos permite utilizar grandes volumes de dados de treinamento não rotulados, permitindo gerar diretamente novos cenários baseados em dados históricos, sem especificar explicitamente um modelo ou as distribuições de probabilidade. Com o uso deste tipo de aprendizado não supervisionado, evita-se o processo de etiquetamento manual dos dados. Três modelos generativos têm sido usados para gerar curvas de carga:
 
 	
 * Redes generativas baseadas em fluxo [6]
