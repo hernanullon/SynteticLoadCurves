@@ -98,41 +98,39 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
 
 Apesar de os medidores coletarem dados a cada 30 segundos, segundo a Resolução Normativa ANEEL Nº 414 DE 09/09/2010, demanda medida é a maior demanda de potência ativa, verificada por medição, integralizada em intervalos de 15 (quinze) minutos durante o período de faturamento [1]. Assim, para obter curvas com 96 pontos a partir dos dados coletados pelos medidores, a média de todas as medições coletadas a cada 15 minutos é utilizada como referência. Nesta etapa da análise, medidores que possuem dados incompletos serão desconsiderados.
 
-No banco de dados utilizado no trabalho, os medidores são agrupados em classes definidas com base na análise das curvas de carga obtidas a partir dos dados coletados:
+No banco de dados utilizado no trabalho, os medidores são agrupados em classes definidas com base na análise das curvas de carga obtidas a partir dos dados coletados, como mostrado na Tabela 2. Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos. Dessa forma, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5.
 
 <div align="center">
 <table>
 	<tr>
-	<td>Classe 0 </td> <td>	Laboratório</td> <td>Classe 6</td> <td>	CECOM</td>
+		<td>Classe 0</td> <td>Laboratório</td> <td>Classe 6</td> <td>CECOM</td>
 	</tr>
    	 <tr>
-	<td>Classe 1</td> <td>	Administrativo</td> <td>Classe 7</td> <td>	Poço</td>
+		<td>Classe 1</td> <td>Administrativo</td> <td>Classe 7</td> <td>Poço</td>
 	</tr>
    	 <tr>
-	<td>Classe 2</td> <td>	Ilu. Pública</td> <td>Classe 8</td> <td>	Sala de aula</td>
+		<td>Classe 2</td> <td>Ilu. Pública</td> <td>Classe 8</td> <td>Sala de aula</td>
 	</tr>
    	 <tr>
-	<td>Classe 3</td> <td>	Restaurante</td> <td>Classe 9</td> <td>	Eletroposto</td>
+		<td>Classe 3</td> <td>Restaurante</td> <td>Classe 9</td> <td>Eletroposto</td>
 	</tr>
     	<tr>
-	<td>Classe 4</td> <td>	PV</td> <td>Classe 10</td> <td>	Biblioteca</td>
+		<td>Classe 4</td> <td>PV</td> <td>Classe 10</td> <td>Biblioteca</td>
 	</tr>
     	<tr>
-	Classe 5</td> <td>	Comercial</td>
+		<td>Classe 5</td> <td>Comercial</td>
 	</tr>
-    	
-	
+	<caption>
+  	Tabela 2: Classes representativas dsa cargas da UNICAMP.
+  	</caption>	
 </table>
 </div>
 
+Para tornar possível a aglutinação de curvas de carga de diferentes medidores num mesmo conjunto, uma normalização a partir do valor máximo de potência ativa observado para cada dia foi utilizado. Assim, garante-se que todas as curvas excursionam entre 0 e 1 e que os comportamentos semelhantes para cada classe de carga sejam evidenciados de forma uniforme.
 
-
-laboratórios, prédios administrativos, Iluminação pública, PV+consumo, PV (apenas geração) e estação de recarga do ônibus elétrico. Na primeira parte do trabalho a rede será treinada com cada uma das classes individualmente. Na segunda parte, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Por fim, na terceira parte, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode aumentar a dificuldade do modelo em aprender como gerar tais curvas.
-
-
+Na primeira parte do trabalho, a rede será treinada com cada uma das classes individualmente. Na segunda parte, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Por fim, na terceira parte, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode levar o modelo generativo a apresentar dificuldades em aprender a distribuição destas curvas.
 
 Outra consideração a ser feita sobre os dados utilizados é a diferenciação entre o perfil de consumo em dias úteis e o perfil de consumo em dias não úteis. Uma vez que nem todas as unidades da UNICAMP funcionam nos mesmos horários nos dias de semana e aos finais de semana, o perfil de consumo obtido para uma dada UC pode variar muito entre os dois cenários. Por exemplo, um prédio comercial que tem um perfil de consumo típico ao longo da semana e que não abre aos finais de semana pode eventualmente ser classificado como uma sala de aula, que também não funciona aos finais de semana. Para simplificar as análises e evitar que registros de classes diferentes sejam confundidos, apenas as medições coletadas em dias úteis são utilizadas por caracterizarem melhor o comportamento esperado das UCs.
-
 
 No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura..
 
