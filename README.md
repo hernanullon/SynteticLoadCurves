@@ -127,12 +127,11 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 </div>
 
 
-
 Na primeira parte do trabalho, a rede será treinada com cada uma das classes individualmente. Na segunda parte, todas as classes de cargas não intermitentes, ou seja, exceto o PV, serão fornecidas ao modelo de forma misturada. Por fim, na terceira parte, as curvas do PV serão adicionados juntamente ao restante das cargas. Por conta da intermitência da geração, a inclusão do PV no grupo de classes pode levar o modelo generativo a apresentar dificuldades em aprender a distribuição destas curvas.
 
 Outra consideração a ser feita sobre os dados utilizados é a diferenciação entre o perfil de consumo em dias úteis e o perfil de consumo em dias não úteis. Uma vez que nem todas as unidades da UNICAMP funcionam nos mesmos horários nos dias de semana e aos finais de semana, o perfil de consumo obtido para uma dada UC pode variar muito entre os dois cenários. Por exemplo, um prédio comercial que tem um perfil de consumo típico ao longo da semana e que não abre aos finais de semana pode eventualmente ser classificado como uma sala de aula, que também não funciona aos finais de semana. Para simplificar as análises e evitar que registros de classes diferentes sejam confundidos, apenas as medições coletadas em dias úteis são utilizadas por caracterizarem melhor o comportamento esperado das UCs.
 
-No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura..
+<!-- Do ponto de vista das análises elétricas, estudos de fluxo de carga serão conduzidos com uso das curvas geradas para verificar se as curvas geradas estão eletricamente coerentes. No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga. Neste sentido, este projeto irá utilizar apenas os dados relacionados ao alimentador BGE06, que possui 40 dos 324 medidores inteligentes instalados no campus e cuja topologia é ilustrada na Figura 3. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura..
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
@@ -140,7 +139,7 @@ No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE
   	Figura 3: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
   	</figcaption>
 </p>
-
+ -->
 
 ### Abordagens usando modelos generativos
 
@@ -195,7 +194,16 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 * Coeficiente de correlação de Pearson
 * Curva de duração da curva de consumo 
 * A volatilidade dos perfis de carga diária
-* Estudos de fluxo de carga e perdas no OpenDSS
+* Estudos de fluxo de carga e análise de perdas no OpenDSS:
+	No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o maior sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06, cuja topologia é ilustrada na Figura 3. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga e análise de perdas. Neste sentido, este projeto irá utilizar apenas o alimentador BGE06 para verificação da qualidade das curvas geradas. Para essa análise, espera-se que ao substituir uma curva real por uma curva gerada para um tranformador de uma dada classe, as perdas elétricas e os níveis de tensão observados em cada barramento sejam mantidos aproximadamente constantes.
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
+	<figcaption>
+  	Figura 3: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
+  	</figcaption>
+</p>
+
 
 
 
