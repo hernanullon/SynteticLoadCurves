@@ -129,11 +129,7 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 
 Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos e, portanto, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5. As Figuras 3-7 apresentam as curvas medidas em preto, com a curva média em vermelho, a curva média mais três desvios-padrão em vermelho tracejado e a curva média menos um desvio-padrão em azul tracejado. As curvas medidas que ficam de fora deste intervalo de desvios-padrão são destacadas em verde e não são levadas em consideração nas análises.
 
-<p float="left">
-  <img src="/img1.png" width="100" />
-  <img src="/img2.png" width="100" /> 
-  <img src="/img3.png" width="100" />
-</p>
+
 
 
 <p align="center">
@@ -141,7 +137,7 @@ Apesar de existirem um total de 10 classes representativas, nem todas elas possu
 	<figcaption>
   	Figura 3: Curvas de carga para a classe 0 (Desenvolvimento próprio).
   	</figcaption>
-</p>
+<!-- </p> -->
 
 <!-- <p align="center"> -->
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/1.png" align="middle" />
