@@ -132,9 +132,10 @@ Apesar de existirem um total de 10 classes representativas, nem todas elas possu
 
 
 
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/0.png" />
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/1.png" />
+<!-- <p align="center"> -->
+<p float="left">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/0.png" width="100" />
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/1.png" width="100" />
 <!-- 	<figcaption>
   	Figura 3: Curvas de carga para a classe 0 (Desenvolvimento próprio).
   	</figcaption> -->
