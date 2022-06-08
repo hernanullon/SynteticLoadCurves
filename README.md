@@ -127,13 +127,41 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 </div>
 
 
-Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos e, portanto, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5. As Figuras apresentam as curvas medidas em preto, com a curva média em vermelho, a curva média mais três desvios-padrão em vermelho tracejado e a curva média menos um desvio-padrão em azul tracejado. As curvas medidas que ficam de fora deste intervalo de desvios-padrão são destacadas em verde e não são levadas em consideração nas análises.
+Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos e, portanto, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5. As Figuras 3-7 apresentam as curvas medidas em preto, com a curva média em vermelho, a curva média mais três desvios-padrão em vermelho tracejado e a curva média menos um desvio-padrão em azul tracejado. As curvas medidas que ficam de fora deste intervalo de desvios-padrão são destacadas em verde e não são levadas em consideração nas análises.
 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/0.png" align="middle">
 	<figcaption>
   	Figura 3: Curvas de carga para a classe 0 (Desenvolvimento próprio).
+  	</figcaption>
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/1.png" align="middle">
+	<figcaption>
+  	Figura 4: Curvas de carga para a classe 0 (Desenvolvimento próprio).
+  	</figcaption>
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/2.png" align="middle">
+	<figcaption>
+  	Figura 5: Curvas de carga para a classe 0 (Desenvolvimento próprio).
+  	</figcaption>
+</p>
+
+<!-- <p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/4.png" align="middle">
+	<figcaption>
+  	Figura 6: Curvas de carga para a classe 0 (Desenvolvimento próprio).
+  	</figcaption>
+</p> -->
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/5.png" align="middle">
+	<figcaption>
+  	Figura 7: Curvas de carga para a classe 0 (Desenvolvimento próprio).
   	</figcaption>
 </p>
 
