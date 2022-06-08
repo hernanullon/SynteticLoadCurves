@@ -149,7 +149,7 @@ Os autores em [6] comparam as três abordagens, obtendo melhores resultados com 
 
 <!-- Descrever a metodologia geral do NICE. Podemos tirar a figura do artigo que tínhamos colocado aqui e deixar só essa aqui. -->
 
-O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura 4, uma série de funções reversíveis $f(.)$ mapeiam as amostras reais $x$ para um espaço latente $z$ que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
+O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura 3, uma série de funções reversíveis $f(.)$ mapeiam as amostras reais $x$ para um espaço latente $z$ que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
 
 <!-- 
 <p align="center">
@@ -159,7 +159,7 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle">
 	<figcaption>
-  	Figura 4: Arquitetura do modelo NICE adotado neste trabalho (Desenvolvimento próprio).
+  	Figura 3: Arquitetura do modelo NICE adotado neste trabalho (Desenvolvimento próprio).
   	</figcaption>
 </p>
 
@@ -185,12 +185,12 @@ Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras 
 * Curva de duração da curva de consumo 
 * A volatilidade dos perfis de carga diária
 * _Estudos de fluxo de carga e análise de perdas no OpenDSS:_
-	No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o maior sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06, cuja topologia é ilustrada na Figura 3. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga e análise de perdas. Neste sentido, este projeto irá utilizar apenas o alimentador BGE06 para verificação da qualidade das curvas geradas. Para essa análise, espera-se que ao substituir uma curva real por uma curva gerada para um tranformador de uma dada classe, as perdas elétricas e os níveis de tensão observados em cada barramento sejam mantidos aproximadamente constantes.
+	No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o maior sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06, cuja topologia é ilustrada na Figura 4. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga e análise de perdas. Neste sentido, este projeto irá utilizar apenas o alimentador BGE06 para verificação da qualidade das curvas geradas. Para essa análise, espera-se que ao substituir uma curva real por uma curva gerada para um tranformador de uma dada classe, as perdas elétricas e os níveis de tensão observados em cada barramento sejam mantidos aproximadamente constantes.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
 	<figcaption>
-  	Figura 3: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
+  	Figura 4: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
   	</figcaption>
 </p>
 
