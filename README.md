@@ -201,7 +201,7 @@ Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE e as curva
 
 $$R(k) = \frac{E[(X_t - \mu)(X_{i+k} - \mu)]}{\sigma ^2}$$
 
-onde {\displaystyle E[]}{\displaystyle E[]} é o valor médio, esperança matemática ou expectativa da expressão, {\displaystyle k}k é o deslocamento no tempo e {\displaystyle \sigma ^{2}}\sigma ^{2} é a variância da variável {\displaystyle X_{t}}{\displaystyle X_{t}}
+onde E[.] é a esperança, $k$ é o deslocamento no tempo e $\sigma ^{2}$ é a variância da variável {$X_{t}$.
 
 * Coeficiente de correlação de Pearson
 * Curva de duração da curva de consumo 
