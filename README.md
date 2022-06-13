@@ -197,7 +197,7 @@ Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relaç�
 
 * **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal de cargas de energia. É necessário que a correlação temporal entre os perfis de carga de energia gerada e a carga de energia original perfis sejam consistentes. A fórmula matemática da função de autocorrelação é a seguinte:
 
-$$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2} \\ (1)$$
+$$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2} \\\\\\\\\\\\\\\\\\\\\\ (1)$$
 
 onde $E[.]$ é a esperança, $k$ é o deslocamento temporal e $\sigma ^{2}$ é a variância da variável $X_{t}$.
 
