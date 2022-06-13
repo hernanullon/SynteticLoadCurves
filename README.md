@@ -195,11 +195,9 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
 
 Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relação as curvas reais, métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas [6, 8, 9, 10]:
 
-* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal entre as curvas de carga geradas e reais, sendo necessário que a correlação temporal entre esses dois perfis sejam consistentes.
+* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal entre as curvas de carga geradas e reais. Na equação, $E[.]$ é a esperança, $k$ é o deslocamento temporal e $\sigma ^{2}$ é a variância da variável $X_{t}$.
 
 $$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2}$$
-
-onde $E[.]$ é a esperança, $k$ é o deslocamento temporal e $\sigma ^{2}$ é a variância da variável $X_{t}$.
 
 * **Divergência KL (Kullback–Leibler):** A divergência KL é uma medida de como uma distribuição de probabilidade é diferente de outra (referência). Uma divergência KL de 0 indica que as duas distribuições são idênticas. A divergência KL é matematicamente definida como mostrado na equação abaixo, onde, $P$ e $Q$ são distribuições de probabilidade definidas no mesmo espaço $X$. Normalmente, $P$ representa os dados ou uma distribuição de probabilidade medida, equanto $Q$ representa uma teoria, um modelo, uma descrição ou uma aproximação de $P$. Uma divergência KL inferior a 0,3 é assumida para indicar que as distribuições de parâmetros dos perfis de carga gerados são muito semelhantes aos dos dados originais.
 
