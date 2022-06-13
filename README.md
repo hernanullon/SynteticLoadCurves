@@ -193,18 +193,19 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
 
 ### Proposta de avaliação
 
-Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relação as curvas reais, três métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas [6, 8, 9, 10]:
+Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relação as curvas reais, métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas [6, 8, 9, 10]:
 
-* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal de cargas de energia. É necessário que a correlação temporal entre os perfis de carga de energia gerada e a carga de energia original perfis sejam consistentes. A fórmula matemática da função de autocorrelação é a seguinte:
+* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal entre as curvas de carga geradas e reais, sendo necessário que a correlação temporal entre esses dois perfis sejam consistentes.
 
-$$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2} { }{ }{ }{ }{ } (1)$$
+$$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2}$$
 
 onde $E[.]$ é a esperança, $k$ é o deslocamento temporal e $\sigma ^{2}$ é a variância da variável $X_{t}$.
 
-* Coeficiente de correlação de Pearson
-* Curva de duração da curva de consumo 
-* A volatilidade dos perfis de carga diária
-* _Estudos de fluxo de carga e análise de perdas no OpenDSS:_
+* **Divergência KL (Kullback–Leibler):** A divergência KL é uma medida de como uma distribuição de probabilidade é diferente de outra (referência). Uma divergência KL de 0 indica que as duas distribuições são idênticas. A divergência KL é matematicamente definida como mostrado na equação abaixo, onde, $P$ e $Q$ são distribuições de probabilidade definidas no mesmo espaço $X$. Normalmente, $P$ representa os dados ou uma distribuição de probabilidade medida, equanto $Q$ representa uma teoria, um modelo, uma descrição ou uma aproximação de $P$. Uma divergência KL inferior a 0,3 é assumida para indicar que as distribuições de parâmetros dos perfis de carga gerados são muito semelhantes aos dos dados originais.
+
+$$D_{KL}(P||Q) = \sum_{x \in X} P(x) log(\frac{P(X)}{Q(X)}$$
+
+* **Estudos de fluxo de carga e análise de perdas no OpenDSS:**
 	No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o maior sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06, cuja topologia é ilustrada na Figura 4. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga e análise de perdas. Neste sentido, este projeto irá utilizar apenas o alimentador BGE06 para verificação da qualidade das curvas geradas. Para essa análise, espera-se que ao substituir uma curva real por uma curva gerada para um tranformador de uma dada classe, as perdas elétricas e os níveis de tensão observados em cada barramento sejam mantidos aproximadamente constantes.
 
 <p align="center">
