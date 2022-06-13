@@ -201,7 +201,8 @@ Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE e as curva
 
 $R(h) = \sum_{i=1}^{n-h} \frac{S_i  -\mu)(S_{i+h)-\mu)}{\sigma^2}$
 
-$e=1+1$
+
+$R(h) = \sum_{i=1}^{n-h}\frac{(S_i - \mu)}{\sigma ^2}$
 * Coeficiente de correlação de Pearson
 * Curva de duração da curva de consumo 
 * A volatilidade dos perfis de carga diária
