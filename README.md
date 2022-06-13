@@ -130,7 +130,6 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 Apesar de existirem um total de 10 classes representativas, nem todas elas possuem uma quantidade de dados suficiente para se treinar os modelos generativos e, portanto, apenas as classes que possuem as maiores quantidades de dados serão utilizadas: classes 0, 1, 2, 4 e 5. As Figuras 3-7 apresentam as curvas medidas em preto, com a curva média em vermelho, a curva média mais três desvios-padrão em vermelho tracejado e a curva média menos um desvio-padrão em azul tracejado. As curvas medidas que ficam de fora deste intervalo de desvios-padrão são destacadas em verde e não são levadas em consideração nas análises.
 
 
-<!-- <p float="center"> -->
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/0.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/1.png" width="400" >
@@ -195,7 +194,14 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
 ### Proposta de avaliação
 
 Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras geradas e as reais:
-* Função de autocorrelação
+
+Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE e as curvas reais, três métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas:
+
+* **Correlação temporal:** Aqui a função de autocorrelação é utilizada para avaliar a correlação temporal de cargas de energia. É necessário que a correlação temporal entre os perfis de carga de energia gerada e a carga de energia original perfis sejam consistentes. A fórmula matemática da função de autocorrelação é a seguinte:
+
+$$ R(h) = \sum_{i=1}^{n-h} \frac{S_i  -\mu)(S_{i+h)-\mu)}{\sigma^2} $$
+
+
 * Coeficiente de correlação de Pearson
 * Curva de duração da curva de consumo 
 * A volatilidade dos perfis de carga diária
