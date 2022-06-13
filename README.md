@@ -193,15 +193,13 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
 
 ### Proposta de avaliação
 
-Cinco indicadores podem ser usados para avaliar a semelhança entre as amostras geradas e as reais:
+Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relação as curvas reais, três métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas [6, 8, 9, 10]:
 
-Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE e as curvas reais, três métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas:
+* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal de cargas de energia. É necessário que a correlação temporal entre os perfis de carga de energia gerada e a carga de energia original perfis sejam consistentes. A fórmula matemática da função de autocorrelação é a seguinte:
 
-* **Correlação temporal:** Aqui a função de autocorrelação é utilizada para avaliar a correlação temporal de cargas de energia. É necessário que a correlação temporal entre os perfis de carga de energia gerada e a carga de energia original perfis sejam consistentes. A fórmula matemática da função de autocorrelação é a seguinte:
+$$R(k) = \frac{E[(X_t - \mu)(X_{i+k} - \mu)]}{\sigma ^2}\;\;\;\;\;\;\;\;\;\;\;(1)$$
 
-$$R(k) = \frac{E[(X_t - \mu)(X_{i+k} - \mu)]}{\sigma ^2}$$
-
-onde E[.] é a esperança, $k$ é o deslocamento no tempo e $\sigma ^{2}$ é a variância da variável {$X_{t}$.
+onde $E[.]$ é a esperança, $k$ é o deslocamento temporal e $\sigma ^{2}$ é a variância da variável $X_{t}$.
 
 * Coeficiente de correlação de Pearson
 * Curva de duração da curva de consumo 
@@ -265,4 +263,6 @@ Society Summer Meeting (Cat. No. 00CH37134). [S.l.]: IEEE, 2000. p. 1645–1656.
 
 [8] C. Jiang, Y. Mao, Y. Chai, M. Yu and S. Tao, "Scenario Generation for Wind Power Using Improved Generative Adversarial Networks," in IEEE Access, vol. 6, pp. 62193-62203, 2018, doi: 10.1109/ACCESS.2018.2875936.
 
-[9] Pan, Zhixin, Jianming Wang, Wenlong Liao, Haiwen Chen, Dong Yuan, Weiping Zhu, Xin Fang, and Zhen Zhu. 2019. "Data-Driven EV Load Profiles Generation Using a Variational Auto-Encoder" Energies 12, no. 5: 849. https://doi.org/10.3390/en12050849 
+[9] Pan, Zhixin, Jianming Wang, Wenlong Liao, Haiwen Chen, Dong Yuan, Weiping Zhu, Xin Fang, and Zhen Zhu. 2019. "Data-Driven EV Load Profiles Generation Using a Variational Auto-Encoder" Energies 12, no. 5: 849. https://doi.org/10.3390/en12050849
+
+[10] Wang, Z., & Hong, T. (2020). Generating realistic building electrical load profiles through the Generative Adversarial Network (GAN). Energy and Buildings, 224, 110299.
