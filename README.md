@@ -195,7 +195,7 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
 
 Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relação as curvas reais, métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas [6, 8, 9, 10]:
 
-* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal entre as curvas de carga geradas e reais. Na equação, $ E[.] $ é a esperança, $ k $ é o deslocamento temporal e $ \sigma ^{2}$ é a variância da variável $X_{t}$.
+* **Correlação temporal:** Nesta abordagem, a função de autocorrelação, dada pela equação a seguir, é utilizada para avaliar a correlação temporal entre as curvas de carga geradas e reais. Na equação, $E[.]$ é a esperança, $ k $ é o deslocamento temporal e $ \sigma ^{2}$ é a variância da variável $X_{t}$.
 
 $$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2}$$
 
