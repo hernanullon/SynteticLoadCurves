@@ -205,7 +205,7 @@ $$D_{KL}(P||Q) = \sum_{x \in X} P(x) log \left( \frac{P(X)}{Q(X)} \right)$$
 ### Ferramentas utilizadas
 A arquitetura do modelo está sendo desenvolvida utilizando TensorFlow 2.6.0. Está baseada no repositório disponível em: https://github.com/bojone/flow/blob/master/nice.py, com modificações nos parâmetros da rede que serão explicados nas seções seguintes. 
 
-### Configuração de parâmetros
+### Configuração de parâmetros (KAREN  - REVISAR ESSA SEÇÃO)
 
 A rede recebe dados de curvas de carga que contêm 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. 
 Por enquanto estão sendo utilizadas exclusivamente as amostras do gerador ‘1000172’ que apresentam um perfil que poderia ser considerado como de um estabelecimento comercial. Assim, temos 400 amostras de treinamento e 70 de validação. É importante mencionar que os dados de mais transformadores serão utilizados na próxima etapa do projeto. 
@@ -214,25 +214,37 @@ A rede contém 4 camadas de acoplamento aditivo tanto para transformação quant
 
 O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido.
 
+A Figura 5 apresenta as curvas com a evolução dos erros de treinamento e de validação para ...
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf0.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf1.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf2.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf4.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf5.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png" width="400" >
 	<figcaption>
-  	Figura 3: Curvas de carga para cada classe avaliada (Desenvolvimento próprio).
+  	Figura 5: Erro de treinamento e validação para cada classe avaliada (Desenvolvimento próprio).
   	</figcaption>
 </p>
 
 
-A partir da análise dos dados de apenas um dos medidores foi possível gerar as curvas de carga sintéticas (Figura da direita) que, visualmente, têm o mesmo perfil das curvas de carga reais (Figura da esquerda). 
+
+A Figura 6 apresenta as curvas geradas pelo modelo NICE
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/gerada_tipica.png" align="middle">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf0.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf1.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf2.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf4.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf5.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png" width="400" >
+	<figcaption>
+  	Figura 5: Erro de treinamento e validação para cada classe avaliada (Desenvolvimento próprio).
+  	</figcaption>
 </p>
-
-Os algoritmos de avaliação ainda não foram implementados. Por tal motivo, ainda não podemos julgar analiticamente os resultados. Essa será a pŕoxima etapa do projeto.
 
 ## Conclusões
 
