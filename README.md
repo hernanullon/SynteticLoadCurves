@@ -259,30 +259,21 @@ A Tabela abaixo apresenta as perdas ativas e reativas para o alimentador BGE06 c
         <td>Base</td> <td>0.0214</td> <td>0.1540</td> 
     </tr>
     <tr>
-        <td>activePowerB</td> <td>currentB</td> <td>reactivePowerB</td> 
+        <td>Classe 0</td> <td>0.0214</td> <td>0.1540</td> 
     </tr>
     <tr>
-        <td>activePowerC</td> <td>currentC</td> <td>reactivePowerC</td> 
+        <td>Classe 1</td> <td>0.0214</td> <td>r0.1540</td> 
     </tr>
     <tr>
-        <td>angleA</td> <td>frequencyA</td> <td>threephaseActivePower</td> 
+        <td>Classe 2</td> <td>0.0214</td> <td>t0.1540</td> 
     </tr>
     <tr>
-        <td>angleB</td> <td>frequencyB</td> <td>threephaseApparentPower</td> 
+        <td>Classe 4</td> <td>0.0214</td> <td>0.1540</td> 
     </tr>
     <tr>
-        <td>angleC</td> <td>frequencyC</td> <td>threephaseReactivePower</td> 
+        <td>Classe 5C</td> <td>0.0214</td> <td>0.1540</td> 
     </tr>
-    <tr>
-        <td>apparentPowerA</td> <td>powerFactorA</td> <td>voltageA</td> 
-    </tr>
-    <tr>
-        <td>apparentPowerB</td> <td>powerFactorB</td> <td>voltageB</td> 
-    </tr>
-    <tr>
-        <td>apparentPowerC</td> <td>powerFactorC</td> <td>voltageC</td> 
-    </tr>
-	<caption>
+ 	<caption>
   	Tabela 1: Características elétricas coletadas pelos medidores inteligentes.
   	</caption>
 	
