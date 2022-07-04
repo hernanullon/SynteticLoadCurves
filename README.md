@@ -231,7 +231,7 @@ A Figura 5 apresenta as curvas com a evolução dos erros de treinamento e de va
 
 
 
-A Figura 6 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estuadadas, classes 0, 1, 2, 4 e 5. É possível observar a partir de uma comparação entre as curvas da Figura 3 e da Figura 6 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas.
+A Figura 6 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estuadadas, classes 0, 1, 2, 4 e 5. É possível observar a partir de uma comparação entre as curvas da Figura 3 e da Figura 6 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas, indicando que o modelo NICE adotado foi capaz de identificar corretamente as features mais importantes cada classe. Por exemplo, um consumo ascendente de energia ao longo do dia, seguido por uma queda suava a partir de por volta das 18h para a classe 0, os "degraus" de desligamento/ligamento dos sensores de iluminação pública observados na classe 2, o perfil de consumo em plateau das classes 1 e 5, sendo estes dois perfis corretamente marcados segundo os valores de consumo nas regiões fora do plateau, mais altos para a classe 1 e mais baixos para a classe 5. O perfil de geração de potência do PV também foi corretamente identificado.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="400" >
