@@ -154,7 +154,7 @@ A utilização de modelos generativos permite utilizar grandes volumes de dados 
 	
 * Autoencoders Variacionais [9]
 
-Os autores em [6] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto vai estar focado na implementação do modelo generativo baseado em fluxo NICE (do inglês _Non-linear Independent Component Estimation_).
+Os autores em [6] comparam as três abordagens, obtendo melhores resultados com a implementação de redes generativas baseadas em fluxo. Por tal motivo, este projeto adotou a implementação do modelo generativo baseado em fluxo NICE (do inglês _Non-linear Independent Component Estimation_).
 
 
 ### NICE: Estimativa não-linear de componentes independentes
