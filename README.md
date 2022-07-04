@@ -215,12 +215,13 @@ A rede contém 4 camadas de acoplamento aditivo tanto para transformação quant
 O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido.
 
 
-A figura a seguir apresenta a evolução do erro de treinamento e de valdiação para as 400 épocas de treinamento.
-
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf0.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf1.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf2.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf5.png" width="400" >
 	<figcaption>
-  	Figura 4: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
+  	Figura 3: Curvas de carga para cada classe avaliada (Desenvolvimento próprio).
   	</figcaption>
 </p>
 
