@@ -231,7 +231,7 @@ A Figura 5 apresenta as curvas com a evolução dos erros de treinamento e de va
 
 
 
-A Figura 6 apresenta as curvas geradas pelo modelo NICE
+A Figura 6 apresenta exemplos de curvas geradas pelo modelo NICE para cada uma das classes estuadadas.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="400" >
@@ -245,6 +245,49 @@ A Figura 6 apresenta as curvas geradas pelo modelo NICE
   	Figura 6: Curvas sintéticas geradas para cada classe avaliada (Desenvolvimento próprio).
   	</figcaption>
 </p>
+
+### Avaliação das curvas pelo OpenDSS
+
+A Tabela abaixo apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base, que não usa nenhuma curva sintética, e os casos em que uma curva de cada classe foi subtituída por uma curva sintética equivalente.
+
+<div align="center">
+<table>
+    <tr>
+        <td>Caso</td> <td>Perdas ativas [MW]</td> <td>Perdas reativas [MVAr]</td> 
+    </tr>
+    <tr>
+        <td>Base</td> <td>0.0214</td> <td>0.1540</td> 
+    </tr>
+    <tr>
+        <td>activePowerB</td> <td>currentB</td> <td>reactivePowerB</td> 
+    </tr>
+    <tr>
+        <td>activePowerC</td> <td>currentC</td> <td>reactivePowerC</td> 
+    </tr>
+    <tr>
+        <td>angleA</td> <td>frequencyA</td> <td>threephaseActivePower</td> 
+    </tr>
+    <tr>
+        <td>angleB</td> <td>frequencyB</td> <td>threephaseApparentPower</td> 
+    </tr>
+    <tr>
+        <td>angleC</td> <td>frequencyC</td> <td>threephaseReactivePower</td> 
+    </tr>
+    <tr>
+        <td>apparentPowerA</td> <td>powerFactorA</td> <td>voltageA</td> 
+    </tr>
+    <tr>
+        <td>apparentPowerB</td> <td>powerFactorB</td> <td>voltageB</td> 
+    </tr>
+    <tr>
+        <td>apparentPowerC</td> <td>powerFactorC</td> <td>voltageC</td> 
+    </tr>
+	<caption>
+  	Tabela 1: Características elétricas coletadas pelos medidores inteligentes.
+  	</caption>
+	
+</table>
+</div>
 
 ## Conclusões
 
