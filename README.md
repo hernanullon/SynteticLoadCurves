@@ -248,7 +248,7 @@ A Figura 6 apresenta exemplos de curvas geradas pelo modelo NICE para cada uma d
 
 ### Avaliação das curvas pelo OpenDSS
 
-A Tabela abaixo apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base, que não usa nenhuma curva sintética, e os casos em que uma curva de cada classe foi subtituída por uma curva sintética equivalente.
+A Tabela 3 apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base (nenhuma curva sintética é usada), e os casos em que uma curva de cada classe foi subtituída por uma curva sintética da mesma classe. É importante salientar que apenas uma classe com curvas sintéticas foi usada em cada caso para avaliar os impactos individuais. É também apresentado um caso em que uma curva de cada classe é substituída por curvas sintéticas, totalizando cinco curvas sintéticas. É possível observar a partir da Tabela 3 que as curvas sintéticas geradas mantém as perdas de potência ativa em valores próximos ao caso base, sendo que no pior caso observado (Classe 1), a diferença é de 0.00002 MW, uma difenreça de menos de 1%. É possível ainda notar que, apesar de as potências reativas terem sido mantidas constantes em todos os casos (apenas as potências ativas foram geradas pelo modelo) pequenas diferenças são observadas. Essas diferenças se devem possivelmente a questões associadas ao equilíbrio de potências do sistema frente aos novos perfis de consumo. Por fim, é possível verificar que as curvas geradas pelo modelo NICE a partir dos dados coletados pelo sistema de monitoramento do campus são suficientemente representativas do perfil de consumo das diferentes classes do campus do ponto de vista das perdas elétricas no sistema.
 
 <div align="center">
 <table>
@@ -277,7 +277,7 @@ A Tabela abaixo apresenta as perdas ativas e reativas para o alimentador BGE06 c
         <td>Todas   </td> <td>0.02139</td> <td>0.15404</td> 
     </tr>
  	<caption>
-  	Tabela 1: Características elétricas coletadas pelos medidores inteligentes.
+  	Tabela 3: Perdas de potência ativa e reativa considerando diferentes cenários.
   	</caption>
 	
 </table>
