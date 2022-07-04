@@ -231,7 +231,7 @@ A Figura 5 apresenta as curvas com a evolução dos erros de treinamento e de va
 
 
 
-A Figura 6 apresenta exemplos de curvas geradas pelo modelo NICE para cada uma das classes estuadadas.
+A Figura 6 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estuadadas, classes 0, 1, 2, 4 e 5. É possível observar a partir de uma comparação entre as curvas da Figura 3 e da Figura 6 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="400" >
@@ -242,10 +242,12 @@ A Figura 6 apresenta exemplos de curvas geradas pelo modelo NICE para cada uma d
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf5_15k.png" width="400" >
 <!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf6_15k.png" width="400" > -->
 	<figcaption>
-  	Figura 6: Curvas sintéticas geradas para cada classe avaliada (Desenvolvimento próprio).
+  	Figura 6: Curvas sintéticas geradas para as classes 0, 1, 2, 4 e 5, respectivamente (Desenvolvimento próprio).
   	</figcaption>
 </p>
 
+Para a classe 2, que corresponde a transformadores de iluminação pública, o modelo NICE produziu curvas com valores de potência negativos, o que é fisicamente incoerente pois durante o dia essas cargas estão desligadas e, portanto, possuem um consumo nulo. Uma possível justificativa para o modelo ter aprendido e reproduzido esse comportamento pode estar associado a dados ruidosos e/ou medidores conectados a transformadores cujos sensores de atuação para ligar e desligar os equipamentos de iluminação estejam com defeitos. Uma alternativa para atuar nesse problema seria uma etapa de pós processamento dsa curvsa para assegurar que esses eventuais valores negativos fiquem em zero. 
+ 
 ### Avaliação das curvas pelo OpenDSS
 
 A Tabela 3 apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base (nenhuma curva sintética é usada), e os casos em que uma curva de cada classe foi subtituída por uma curva sintética da mesma classe. É importante salientar que apenas uma classe com curvas sintéticas foi usada em cada caso para avaliar os impactos individuais. É também apresentado um caso em que uma curva de cada classe é substituída por curvas sintéticas, totalizando cinco curvas sintéticas. É possível observar a partir da Tabela 3 que as curvas sintéticas geradas mantém as perdas de potência ativa em valores próximos ao caso base, sendo que no pior caso observado (Classe 1), a diferença é de 0.00002 MW, uma difenreça de menos de 1%. É possível ainda notar que, apesar de as potências reativas terem sido mantidas constantes em todos os casos (apenas as potências ativas foram geradas pelo modelo) pequenas diferenças são observadas. Essas diferenças se devem possivelmente a questões associadas ao equilíbrio de potências do sistema frente aos novos perfis de consumo. Por fim, é possível verificar que as curvas geradas pelo modelo NICE a partir dos dados coletados pelo sistema de monitoramento do campus são suficientemente representativas do perfil de consumo das diferentes classes do campus do ponto de vista das perdas elétricas no sistema.
