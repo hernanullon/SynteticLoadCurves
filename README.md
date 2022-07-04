@@ -256,22 +256,25 @@ A Tabela abaixo apresenta as perdas ativas e reativas para o alimentador BGE06 c
         <td>Caso</td> <td>Perdas ativas [MW]</td> <td>Perdas reativas [MVAr]</td> 
     </tr>
     <tr>
-        <td>Base</td> <td>0.0214</td> <td>0.1540</td> 
+        <td>Base    </td> <td>0.02139</td> <td>0.15400</td> 
     </tr>
     <tr>
-        <td>Classe 0</td> <td>0.0214</td> <td>0.1540</td> 
+        <td>Classe 0</td> <td>0.02140</td> <td>0.15402</td> 
     </tr>
     <tr>
-        <td>Classe 1</td> <td>0.0214</td> <td>r0.1540</td> 
+        <td>Classe 1</td> <td>0.02141</td> <td>r0.15405</td> 
     </tr>
     <tr>
-        <td>Classe 2</td> <td>0.0214</td> <td>t0.1540</td> 
+        <td>Classe 2</td> <td>0.02139</td> <td>t0.15400</td> 
     </tr>
     <tr>
-        <td>Classe 4</td> <td>0.0214</td> <td>0.1540</td> 
+        <td>Classe 4</td> <td>0.02138</td> <td>0.15399</td> 
     </tr>
     <tr>
-        <td>Classe 5C</td> <td>0.0214</td> <td>0.1540</td> 
+        <td>Classe 5</td> <td>0.02138</td> <td>0.15399</td> 
+    </tr>
+    <tr>
+        <td>Todas   </td> <td>0.02139</td> <td>0.15404</td> 
     </tr>
  	<caption>
   	Tabela 1: Características elétricas coletadas pelos medidores inteligentes.
