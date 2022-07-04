@@ -234,8 +234,8 @@ A Figura 5 apresenta as curvas com a evolução dos erros de treinamento e de va
 A Figura 6 apresenta exemplos de curvas geradas pelo modelo NICE para cada uma das classes estuadadas.
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf2_15k.png" width="400" >
 <!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" > -->
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf4_15k.png" width="400" >
