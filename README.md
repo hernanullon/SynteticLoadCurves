@@ -220,7 +220,7 @@ A Figura 5 apresenta as curvas com a evolução dos erros de treinamento e de va
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf0.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf1.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf2.png" width="400" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" >
+<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" > -->
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf4.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf5.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png" width="400" >
@@ -237,7 +237,7 @@ A Figura 6 apresenta as curvas geradas pelo modelo NICE
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf0.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf1.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf2.png" width="400" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" >
+<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" > -->
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf4.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf5.png" width="400" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png" width="400" >
