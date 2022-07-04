@@ -175,20 +175,6 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
   	</figcaption>
 </p>
 
-
-### Ferramentas utilizadas
-A arquitetura do modelo está sendo desenvolvida utilizando TensorFlow 2.6.0. Está baseada no repositório disponível em: https://github.com/bojone/flow/blob/master/nice.py, com modificações nos parâmetros da rede que serão explicados nas seções seguintes. 
-
-### Configuração de parâmetros
-
-A rede recebe dados de curvas de carga que contêm 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. 
-Por enquanto estão sendo utilizadas exclusivamente as amostras do gerador ‘1000172’ que apresentam um perfil que poderia ser considerado como de um estabelecimento comercial. Assim, temos 400 amostras de treinamento e 70 de validação. É importante mencionar que os dados de mais transformadores serão utilizados na próxima etapa do projeto. 
-
-A rede contém 4 camadas de acoplamento aditivo tanto para transformação quanto para a inversão. Foram usadas camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Selecionamos um tamanho de batch de 32 amostras e treinamos a rede durante 400 épocas, salvando o melhor modelo obtido. 
-
-O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido. 
-
-
 ### Proposta de avaliação
 
 Para avaliar a qualidade das curvas de carga geradas pelo modelo NICE em relação as curvas reais, métricas de avaliação tipicamente empregadas no contexto de geração de cenários em sistemas de distribuição são adotadas [6, 8, 9, 10]:
@@ -215,6 +201,29 @@ $$D_{KL}(P||Q) = \sum_{x \in X} P(x) log \left( \frac{P(X)}{Q(X)} \right)$$
 
 
 ## Resultados e Discussão dos Resultados
+
+### Ferramentas utilizadas
+A arquitetura do modelo está sendo desenvolvida utilizando TensorFlow 2.6.0. Está baseada no repositório disponível em: https://github.com/bojone/flow/blob/master/nice.py, com modificações nos parâmetros da rede que serão explicados nas seções seguintes. 
+
+### Configuração de parâmetros
+
+A rede recebe dados de curvas de carga que contêm 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. 
+Por enquanto estão sendo utilizadas exclusivamente as amostras do gerador ‘1000172’ que apresentam um perfil que poderia ser considerado como de um estabelecimento comercial. Assim, temos 400 amostras de treinamento e 70 de validação. É importante mencionar que os dados de mais transformadores serão utilizados na próxima etapa do projeto. 
+
+A rede contém 4 camadas de acoplamento aditivo tanto para transformação quanto para a inversão. Foram usadas camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Selecionamos um tamanho de batch de 32 amostras e treinamos a rede durante 400 épocas, salvando o melhor modelo obtido. 
+
+O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido.
+
+
+A figura a seguir apresenta a evolução do erro de treinamento e de valdiação para as 400 épocas de treinamento.
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/BaseDados.jpeg" align="middle" width="600">
+	<figcaption>
+  	Figura 4: Topologia do alimentador BGE06 da UNICAMP (Desenvolvimento próprio).
+  	</figcaption>
+</p>
+
 
 A partir da análise dos dados de apenas um dos medidores foi possível gerar as curvas de carga sintéticas (Figura da direita) que, visualmente, têm o mesmo perfil das curvas de carga reais (Figura da esquerda). 
 
