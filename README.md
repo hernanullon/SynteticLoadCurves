@@ -211,18 +211,10 @@ A arquitetura do modelo foi desenvolvida utilizando TensorFlow 2.6.0, e está ba
 
 Neste experimento, um modelo NICE foi treinado para cada subconjunto de dados dos diferentes transformadores. O procedimento que será descrito se mantem para as 6 classes de curvas de carga. 
 
-A rede recebe vetores pré-processados de curvas de carga unidimensionais com 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. Os vetores passam pelas 4 camadas de acoplamento aditivo que contêm 5 camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Os hiperparâmeros selecionados para cada modelo são apresentados na Tabela. Foram implementadas técnicas de regularização como Early Stopping com diferentes valores de paciência para cada modelo. Durante o treinamento, a perda no conjunto de validação é monitorada para salvar o melhor modelo. Se durante o número de épocas definido pela paciência, a perda de validação não melhorou, o treinamento é encerrado.
+A rede recebe vetores pré-processados de curvas de carga unidimensionais com 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. Os vetores passam pelas 4 camadas de acoplamento aditivo que contêm 5 camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Os hiperparâmeros selecionados para cada modelo são apresentados na Tabela 3. O conjunto de dados de cada transformador foi separado aletoriamente em amostras de treinamento e validação segundo a relação 8:2. Foram implementadas técnicas de regularização como Early Stopping com diferentes valores de paciência para cada modelo. Durante o treinamento, a perda no conjunto de validação é monitorada para salvar o melhor modelo, dado que se durante o número de épocas definido pela paciência, a perda de validação não melhorou, o treinamento é encerrado.
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
-</style>
-<table class="tg">
+<div align="center">
+<table>
 <thead>
   <tr>
     <th class="tg-7btt">Medidor</th>
@@ -276,11 +268,13 @@ A rede recebe vetores pré-processados de curvas de carga unidimensionais com 96
     <td class="tg-c3ow">35</td>
   </tr>
 </tbody>
+ 	<caption>
+  	Tabela 3: Hiper-parâmetros dos modelos de cada transformador.
+  	</caption>
 </table>
+</div>
 
-Cada medidor tem diferentes 
-Por enquanto estão sendo utilizadas exclusivamente as amostras do gerador ‘1000172’ que apresentam um perfil que poderia ser considerado como de um estabelecimento comercial. Assim, temos 400 amostras de treinamento e 70 de validação. É importante mencionar que os dados de mais transformadores serão utilizados na próxima etapa do projeto. 
-
+As curvas de aprendizado de cada modelo NICE são apresentadas na Figura. 
 
 
 O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido.
@@ -321,7 +315,7 @@ Para a classe 2, que corresponde a transformadores de iluminação pública, o m
  
 ### Avaliação das curvas pelo OpenDSS
 
-A Tabela 3 apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base (nenhuma curva sintética é usada), e os casos em que uma curva de cada classe foi subtituída por uma curva sintética da mesma classe. É importante salientar que apenas uma classe com curvas sintéticas foi usada em cada caso para avaliar os impactos individuais. É também apresentado um caso em que uma curva de cada classe é substituída por curvas sintéticas, totalizando cinco curvas sintéticas. É possível observar a partir da Tabela 3 que as curvas sintéticas geradas mantém as perdas de potência ativa em valores próximos ao caso base, sendo que no pior caso observado (Classe 1), a diferença é de 0.00002 MW, uma difenreça de menos de 1%. É possível ainda notar que, apesar de as potências reativas terem sido mantidas constantes em todos os casos (apenas as potências ativas foram geradas pelo modelo) pequenas diferenças são observadas. Essas diferenças se devem possivelmente a questões associadas ao equilíbrio de potências do sistema frente aos novos perfis de consumo. Por fim, é possível verificar que as curvas geradas pelo modelo NICE a partir dos dados coletados pelo sistema de monitoramento do campus são suficientemente representativas do perfil de consumo das diferentes classes do campus do ponto de vista das perdas elétricas no sistema.
+A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base (nenhuma curva sintética é usada), e os casos em que uma curva de cada classe foi subtituída por uma curva sintética da mesma classe. É importante salientar que apenas uma classe com curvas sintéticas foi usada em cada caso para avaliar os impactos individuais. É também apresentado um caso em que uma curva de cada classe é substituída por curvas sintéticas, totalizando cinco curvas sintéticas. É possível observar a partir da Tabela 4 que as curvas sintéticas geradas mantém as perdas de potência ativa em valores próximos ao caso base, sendo que no pior caso observado (Classe 1), a diferença é de 0.00002 MW, uma difenreça de menos de 1%. É possível ainda notar que, apesar de as potências reativas terem sido mantidas constantes em todos os casos (apenas as potências ativas foram geradas pelo modelo) pequenas diferenças são observadas. Essas diferenças se devem possivelmente a questões associadas ao equilíbrio de potências do sistema frente aos novos perfis de consumo. Por fim, é possível verificar que as curvas geradas pelo modelo NICE a partir dos dados coletados pelo sistema de monitoramento do campus são suficientemente representativas do perfil de consumo das diferentes classes do campus do ponto de vista das perdas elétricas no sistema.
 
 <div align="center">
 <table>
@@ -350,7 +344,7 @@ A Tabela 3 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
         <td>Todas   </td> <td>0.02139</td> <td>0.15404</td> 
     </tr>
  	<caption>
-  	Tabela 3: Perdas de potência ativa e reativa considerando diferentes cenários.
+  	Tabela 4: Perdas de potência ativa e reativa considerando diferentes cenários.
   	</caption>
 	
 </table>
