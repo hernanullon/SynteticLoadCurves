@@ -353,10 +353,10 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
         <td>Classe 0</td> <td>0.02140</td> <td>0.15402</td> 
     </tr>
     <tr>
-        <td>Classe 1</td> <td>0.02141</td> <td>r0.15405</td> 
+        <td>Classe 1</td> <td>0.02141</td> <td>0.15405</td> 
     </tr>
     <tr>
-        <td>Classe 2</td> <td>0.02139</td> <td>t0.15400</td> 
+        <td>Classe 2</td> <td>0.02139</td> <td>0.15400</td> 
     </tr>
     <tr>
         <td>Classe 4</td> <td>0.02138</td> <td>0.15399</td> 
@@ -376,6 +376,7 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
 
 ### Avaliação das Curvas de Distribuções pela Divergencia Kullback-Leibler
 
+Para o cálculo da divergencia Kullback-Leibler foram computadas as curvas de distribuição das curvas de carga reais e sintéticas para cada transformador, como mostrado na Figura 9. Pode-se analisar visualmente que as distribuiç
 <p align="center">	        
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" width="330">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe1.png" width="330">
