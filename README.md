@@ -132,9 +132,9 @@ Apesar de existirem um total de 10 classes representativas, nem todas elas possu
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/0.png" width="330" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/1.png" width="330" >
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/2.png" width="330" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Classe3.png" width="300" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/5.png" width="330" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/WhatsApp Image 2022-07-04 at 4.40.19 PM.jpeg" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/3.png" width="300" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/4.png" width="330" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/5.png" width="330">
 	<figcaption>
   	Figura 3: Curvas de carga para cada classe avaliada (Desenvolvimento próprio).
   	</figcaption>
