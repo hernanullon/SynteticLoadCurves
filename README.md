@@ -218,7 +218,7 @@ A rede recebe vetores pré-processados de curvas de carga unidimensionais com 96
 <table>
 <thead>
   <tr>
-    <th class="tg-7btt">Medidor</th>
+    <th class="tg-7btt">Transformadores</th>
     <th class="tg-7btt">Amostras</th>
     <th class="tg-7btt">Batch</th>
     <th class="tg-7btt">Épocas</th>
@@ -372,6 +372,43 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
 	
 </table>
 </div>
+
+### Avaliação das curvas pelo OpenDSS
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" align="middle" width="500">
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe1.png" align="middle" width="500">
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe2.png" align="middle" width="500">
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe3.png" align="middle" width="500">
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe4.png" align="middle" width="500">
+</p>
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe5.png" align="middle" width="500">
+</p>
+
+### Avaliação pela Divergencia Kullback-Leibler
+
+|classe|KL_RS [nats]|KL_mean [nats]|KL_std [nats]|
+|--|--|--|--|
+|0|0.074|0.137|0.045|
+|1|0.074|0.088|0.069|
+|2|0.091|0.466|0.363|
+|3|0.178|0.154|0.088|
+|4|0.065|0.071|0.168|
+|5|0.092|0.165|0.061|
 
 ## Conclusões
 
