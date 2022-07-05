@@ -327,7 +327,7 @@ Para a classe 2, que corresponde a transformadores de iluminação pública, o m
 Nesta seção do projeto o modelo NICE foi treinado utilizando as amostras de todos os transformadores, simulando um cenário no qual as curvas de carga não tinham sido etiquetadas. Um total de 33519 curvas foram separadas em conjuntos de treinamento e teste com a relação 7:3. O modelo foi treinado durante 48 épocas, com uma paciência de 10 épocas e batch de 128 amostras. A curva de apredizado é apresentada na Figura 8. 
 
 <p align="center">
-	<img src="[https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/curvas_geradas.jpeg](https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png)" align="middle" width="700">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png" align="middle" width="350">
 	<figcaption>
   	Figura 8: Curvas de treinamento e validação da perda do modelo condicional.
   	</figcaption>
