@@ -374,7 +374,7 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
 </table>
 </div>
 
-### Avaliação das Curvas de Distribuções
+### Avaliação das Curvas de Distribuções pela Divergencia Kullback-Leibler
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" width="330">
@@ -387,9 +387,6 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
   	Figura 9: Curvas de Distribuções por Classe (Desenvolvimento próprio).
   	</figcaption>
 </p>
-
-
-### Avaliação pela Divergencia Kullback-Leibler
 
 |classe|KL_RS [nats]|KL_mean [nats]|KL_std [nats]|
 |--|--|--|--|
