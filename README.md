@@ -274,7 +274,7 @@ A rede recebe vetores pré-processados de curvas de carga unidimensionais com 96
 </table>
 </div>
 
-As curvas de aprendizado de cada modelo NICE são apresentadas na Figura 5, onde se mostra a evolução da perda de treinamento e de validação ao longo das épocas. 
+As curvas de aprendizado de cada modelo NICE são apresentadas na Figura 5, onde se mostra a evolução da perda de treinamento e de validação ao longo das épocas. Pode-se ver que os medidores 3, 4 e 5 foram mais difíceis de modelar, posto que um maior número de épocas de treinamento foram precisas para atingir baixa perda. Também é possível analisar que o uso de técnicas de regularização evitou sobre ajustar os modelos, já que as curvas de validação mostram um comportamento homogêneo nas últimas épocas.
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf0.png" width="330" >
@@ -289,18 +289,16 @@ As curvas de aprendizado de cada modelo NICE são apresentadas na Figura 5, onde
 </p>
 
 
-O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido.
-
-A Figura 6 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estuadadas, classes 0, 1, 2, 4 e 5. É possível observar a partir de uma comparação entre as curvas da Figura 3 e da Figura 6 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas, indicando que o modelo NICE adotado foi capaz de identificar corretamente as features mais importantes cada classe. Por exemplo, um consumo ascendente de energia ao longo do dia, seguido por uma queda suava a partir de por volta das 18h para a classe 0, os "degraus" de desligamento/ligamento dos sensores de iluminação pública observados na classe 2, o perfil de consumo em plateau das classes 1 e 5, sendo estes dois perfis corretamente marcados segundo os valores de consumo nas regiões fora do plateau, mais altos para a classe 1 e mais baixos para a classe 5. O perfil de geração de potência do PV também foi corretamente identificado.
+O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido. A Figura 6 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estudadas (0, 1, 2, 4 e 5). É possível observar a partir de uma comparação entre as curvas da Figura 3 e da Figura 6 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas, indicando que o modelo NICE adotado foi capaz de identificar corretamente as features mais importantes cada classe. Por exemplo, um consumo ascendente de energia ao longo do dia, seguido por uma queda suava a partir de por volta das 18h para a classe 0, os "degraus" de desligamento/ligamento dos sensores de iluminação pública observados na classe 2, o perfil de consumo em plateau das classes 1 e 5, sendo estes dois perfis corretamente marcados segundo os valores de consumo nas regiões fora do plateau, mais altos para a classe 1 e mais baixos para a classe 5. O perfil de geração de potência do PV também foi corretamente identificado.
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="400" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="400" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf2_15k.png" width="400" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="330" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="330" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf2_15k.png" width="330" >
 <!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" > -->
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf4_15k.png" width="400" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf5_15k.png" width="400" >
-<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf6_15k.png" width="400" > -->
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf4_15k.png" width="330" >
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf5_15k.png" width="330" >
+<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf6_15k.png" width="330" > -->
 	<figcaption>
   	Figura 6: Curvas sintéticas geradas para as classes 0, 1, 2, 4 e 5, respectivamente (Desenvolvimento próprio).
   	</figcaption>
