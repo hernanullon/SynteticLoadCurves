@@ -376,18 +376,22 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
 
 ### Avaliação das Curvas de Distribuções pela Divergencia Kullback-Leibler
 
-Para o cálculo da divergencia Kullback-Leibler foram computadas as curvas de distribuição das curvas de carga reais e sintéticas para cada transformador, como mostrado na Figura 9. Pode-se analisar visualmente que as distribuiç
+Para o cálculo da divergencia Kullback-Leibler foram computadas as curvas de distribuição das curvas de carga reais e sintéticas para cada transformador, como mostrado na Figura 9. Pode-se analisar visualmente que as distribuições de probabilidade com menos similitude são das classes 0, 2, e 5.
 <p align="center">	        
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" width="330">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe1.png" width="330">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe2.png" width="330">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe3.png" width="330">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe4.png" width="330">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe5.png" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" width="250">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe1.png" width="250">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe2.png" width="250">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe3.png" width="250">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe4.png" width="250">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe5.png" width="250">
 	<figcaption>
   	Figura 9: Curvas de Distribuções por Classe (Desenvolvimento próprio).
   	</figcaption>
 </p>
+
+Usando as distribuições de probabilidade, calculamos a divergencia Kullback-Leibler das curvas sintéticas em relação com as curvas reais (Tabela 5). Os valores da coluna KL_mean calculada a partir da média das curvas de carga, permite comprovar que as curvas das classes 1, 3 ,4 foram geradas com maior semelhança, posto que a medida KL é menor. 
+
+  	Tabela 5: Divergencia Kullback-Leibler para cada transformador
 
 |classe|KL_RS [nats]|KL_mean [nats]|KL_std [nats]|
 |--|--|--|--|
