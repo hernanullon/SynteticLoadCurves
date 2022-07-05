@@ -69,7 +69,7 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
     <tr>
         <td>activePowerC</td> <td>currentC</td> <td>reactivePowerC</td> 
     </tr>
-    <tr>
+    <tr>https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png
         <td>angleA</td> <td>frequencyA</td> <td>threephaseActivePower</td> 
     </tr>
     <tr>
@@ -402,21 +402,21 @@ Usando as distribuições de probabilidade, calculamos a divergencia Kullback-Le
 |4|0.065|0.071|0.168|
 |5|0.092|0.165|0.061|
 
-## Conclusões
+## Cronograma
 
-A proposta inclui o pré-processamento e análise da base de dados, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura estará sujeita a modificações nos parâmetros da rede: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependerá fortemente dos nossos dados. 
+As atividades desenvolvidas no projeto se encaixaram no cronograma estabelecido na proposta inicial. Para a entrega E1 foi apresentado o processamento dos dados e o estudo do modelo NICE. A segunda entrega E2 incluiu o primeiro treinamento do modelo NICE para as curvas de carga. Nesta entrega final E3 apresentamos os modelos NICE treinados com os dados de cada transformador, e um modelo de geração condicional que classifica as amostras sintéticas do modelo NICE. 
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/cronograma.png" align="middle" width="900">
 </p>
 
-De acordo com o cronograma, até a data de entrega desta versão E2 esperava-se ter uma base de dados completamente tratada e pronta para a realização dos estudos com o modelo generativo NICE. Além disso, o cronograma inicial previa uma breve familiarização com o modelo generativo NICE a ser usado no trabalho, sendo que ambos os objetivos foram alcançados.
+## Conclusões
 
-Os medidores inteligentes instalados nos transformadores do alimentador BGE06 foram selecionados para serem analisados, uma vez que este alimentador possui tanto o PV quanto a estação de recarga de ônibus elétrico instalados, além de ser o alimentador que possui o modelo elétrico mais confiável para análises de fluxo de carga, um dos critérios de análise da qualidade dos resultados adotada neste trabalho.
+A proposta inicial deste projeto foi executada satisfatoriamente, incluíndo o pré-processamento e análise da base de dados de curvas de carga de potência, assim como a adaptação do modelo NICE para o cenário estudado. A implementação da arquitetura precisou de modificações nos parâmetros da rede como: o número de camadas MLP, o número de neurônios em cada camada, e as épocas de treinamento da rede, posto que isso dependeu fortemente dos dados de cada transformador. 
 
-Foram geradas curvas de carga com 96 pontos tomados como a média das medições de potência ativa trifásica a cada 15 minutos, sendo que as amostras (curvas de carga diárias) que apresentam dados faltantes foram desconsideradas, e os medidores/transformadores foram agrupados em classes segundo seu perfil de consumo. Por questões associadas a variações no perfil de consumo das UCs da universidade em dias úteis e dias não úteis, optou-se por trabalhar apenas com dias úteis uma vez qeu o consumo nesses dias representa o comportamento típico das UCs. Por fim, medidores com dados
+Foram geradas curvas de carga com 96 pontos tomados como a média das medições de potência ativa trifásica a cada 15 minutos, sendo que as amostras (curvas de carga diárias) que apresentam dados faltantes foram desconsideradas, e os medidores/transformadores foram agrupados em classes segundo seu perfil de consumo. Por questões associadas a variações no perfil de consumo das UCs da universidade em dias úteis e dias não úteis, optou-se por trabalhar apenas com dias úteis uma vez qeu o consumo nesses dias representa o comportamento típico das UCs. 
 
-Os primeiros testes com o modelo NICE se mostraram promissores, sendo que foi possível obter uma curva de carga sintética visulamente muito próxima da curva de consumo típica para um dado medidor com características comerciais.
+Gerar curvas de carga sintética usando a arquitetura NICE demonstrou ser uma técnica promissora para gerar cenários sintéticos de consumo. Esta proposta também pode ser de utilidade para aumento do dados quando a base de dados for desbalanceada. 
 
 
 
