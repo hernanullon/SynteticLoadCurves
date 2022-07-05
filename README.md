@@ -290,22 +290,37 @@ As curvas de aprendizado de cada modelo NICE são apresentadas na Figura 5, onde
 </p>
 
 
-O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido. A Figura 6 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estudadas (0, 1, 2, 4 e 5). É possível observar a partir de uma comparação entre as curvas da Figura 3 e da Figura 6 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas, indicando que o modelo NICE adotado foi capaz de identificar corretamente as features mais importantes cada classe. Por exemplo, um consumo ascendente de energia ao longo do dia, seguido por uma queda suava a partir de por volta das 18h para a classe 0, os "degraus" de desligamento/ligamento dos sensores de iluminação pública observados na classe 2, o perfil de consumo em plateau das classes 1 e 5, sendo estes dois perfis corretamente marcados segundo os valores de consumo nas regiões fora do plateau, mais altos para a classe 1 e mais baixos para a classe 5. O perfil de geração de potência do PV também foi corretamente identificado.
+O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido. A Figura 7 apresenta exemplos de curvas sintéticas geradas pelo modelo NICE para cada uma das classes estudadas (0, 1, 2, 3, 4 e 5), cujas curvas reais são mostradas na Figura 6. É possível observar a partir de uma comparação entre as curvas da Figura 6 e da Figura 7 que as curvas sintéticas apresentam perfis visualmente semelhantes ao das curvas reais medidas, indicando que o modelo NICE adotado foi capaz de identificar corretamente as features mais importantes cada classe. Por exemplo, um consumo ascendente de energia ao longo do dia, seguido por uma queda suava a partir de por volta das 18h para a classe 0, os "degraus" de desligamento/ligamento dos sensores de iluminação pública observados na classe 2, o perfil de consumo em plateau das classes 1 e 5, sendo estes dois perfis corretamente marcados segundo os valores de consumo nas regiões fora do plateau, mais altos para a classe 1 e mais baixos para a classe 5. O perfil de geração de potência do PV também foi corretamente identificado.
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="330" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="330" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf2_15k.png" width="330" >
-<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" > -->
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf4_15k.png" width="330" >
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf5_15k.png" width="330" >
-<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf6_15k.png" width="330" > -->
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/curvas_reais.jpeg" align="middle" width="700">
 	<figcaption>
-  	Figura 6: Curvas sintéticas geradas para as classes 0, 1, 2, 4 e 5, respectivamente (Desenvolvimento próprio).
+  	Figura 6: Curvas de carga reais para cada transformador. 
   	</figcaption>
 </p>
 
-Para a classe 2, que corresponde a transformadores de iluminação pública, o modelo NICE produziu curvas com valores de potência negativos, o que é fisicamente incoerente pois durante o dia essas cargas estão desligadas e, portanto, possuem um consumo nulo. Uma possível justificativa para o modelo ter aprendido e reproduzido esse comportamento pode estar associado a dados ruidosos e/ou medidores conectados a transformadores cujos sensores de atuação para ligar e desligar os equipamentos de iluminação estejam com defeitos. Uma alternativa para atuar nesse problema seria uma etapa de pós processamento dsa curvsa para assegurar que esses eventuais valores negativos fiquem em zero. 
+
+<p align="center">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/curvas_geradas.jpeg" align="middle" width="700">
+	<figcaption>
+  	Figura 7: Curvas de carga geradas para cada transformador. 
+  	</figcaption>
+</p>
+
+<!--<p align="center">-->
+<!--	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf1_15k.png" width="330" >-->
+<!--	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf0_15k.png" width="330" >-->
+<!--	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf2_15k.png" width="330" >-->
+<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf3.png" width="400" > -->
+<!--	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf4_15k.png" width="330" >-->
+<!--	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf5_15k.png" width="330" >-->
+<!-- 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/sample_transf6_15k.png" width="330" > -->
+<!--	<figcaption>-->
+ <!-- 	Figura 6: Curvas sintéticas geradas para as classes 0, 1, 2, 4 e 5, respectivamente (Desenvolvimento próprio).-->
+  <!--	</figcaption>-->
+</p>
+
+Para a classe 2, que corresponde a transformadores de iluminação pública, o modelo NICE produziu curvas com valores de potência negativos, o que é fisicamente incoerente pois durante o dia essas cargas estão desligadas e, portanto, possuem um consumo nulo. Uma possível justificativa para o modelo ter aprendido e reproduzido esse comportamento pode estar associado a dados ruidosos e/ou medidores conectados a transformadores cujos sensores de atuação para ligar e desligar os equipamentos de iluminação estejam com defeitos. Uma alternativa para atuar nesse problema seria uma etapa de pós processamento das curvas para assegurar que esses eventuais valores negativos fiquem em zero. 
  
 ### Avaliação das curvas pelo OpenDSS
 
