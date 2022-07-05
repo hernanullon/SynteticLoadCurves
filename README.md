@@ -321,7 +321,21 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
 </p>
 
 Para a classe 2, que corresponde a transformadores de iluminação pública, o modelo NICE produziu curvas com valores de potência negativos, o que é fisicamente incoerente pois durante o dia essas cargas estão desligadas e, portanto, possuem um consumo nulo. Uma possível justificativa para o modelo ter aprendido e reproduzido esse comportamento pode estar associado a dados ruidosos e/ou medidores conectados a transformadores cujos sensores de atuação para ligar e desligar os equipamentos de iluminação estejam com defeitos. Uma alternativa para atuar nesse problema seria uma etapa de pós processamento das curvas para assegurar que esses eventuais valores negativos fiquem em zero. 
- 
+
+### Geração de curvas de carga condicionais
+
+Nesta seção do projeto o modelo NICE foi treinado utilizando as amostras de todos os transformadores, simulando um cenário no qual as curvas de carga não tinham sido etiquetadas. Um total de 33519 curvas foram separadas em conjuntos de treinamento e teste com a relação 7:3. O modelo foi treinado durante 48 épocas, com uma paciência de 10 épocas e batch de 128 amostras. A curva de apredizado é apresentada na Figura 8. 
+
+<p align="center">
+	<img src="[https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/curvas_geradas.jpeg](https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/transf6.png)" align="middle" width="700">
+	<figcaption>
+  	Figura 8: Curvas de treinamento e validação da perda do modelo condicional.
+  	</figcaption>
+</p>
+
+O processo de geração se mantém igual do que na geração de curvas para cada transformador. Porém, considerando que o modelo estará gerando curvas de todos os tipos de transformadores, é preciso implementar um classificador das curvas geradas. O classificador contem dois blocos de camadas convolucionais unidimensionais com 60 e 30 filtros respectivamente. Foram usadas camadas de max pooling e dropout visando reduzir a dimensionalidade dos dados de entrada e evitar sobre ajustar o modelo. Duas camadas densas processam a saída dos blocos convolucionais e entregam a predição da classe de curva. O modelo foi treinado com curvas de carga reais etiquetadas, mas a predição do modelo pode ser aplicada nos dados sintéticos com o objetivo de filtrar as curvas de carga de um tipo determinado. Consideramos o modelo relativamente confiável posto que consegue classificar as curvas com 89% de acurácia. Este enfoque do projeto é especialmente útil para a geração de diferentes cenários de consumo, do qual as curvas reais não têm etiquetas.  O notebook deste classificador também está disponível no repositório.
+
+
 ### Avaliação das curvas pelo OpenDSS
 
 A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 considerando o caso base (nenhuma curva sintética é usada), e os casos em que uma curva de cada classe foi subtituída por uma curva sintética da mesma classe. É importante salientar que apenas uma classe com curvas sintéticas foi usada em cada caso para avaliar os impactos individuais. É também apresentado um caso em que uma curva de cada classe é substituída por curvas sintéticas, totalizando cinco curvas sintéticas. É possível observar a partir da Tabela 4 que as curvas sintéticas geradas mantém as perdas de potência ativa em valores próximos ao caso base, sendo que no pior caso observado (Classe 1), a diferença é de 0.00002 MW, uma difenreça de menos de 1%. É possível ainda notar que, apesar de as potências reativas terem sido mantidas constantes em todos os casos (apenas as potências ativas foram geradas pelo modelo) pequenas diferenças são observadas. Essas diferenças se devem possivelmente a questões associadas ao equilíbrio de potências do sistema frente aos novos perfis de consumo. Por fim, é possível verificar que as curvas geradas pelo modelo NICE a partir dos dados coletados pelo sistema de monitoramento do campus são suficientemente representativas do perfil de consumo das diferentes classes do campus do ponto de vista das perdas elétricas no sistema.
