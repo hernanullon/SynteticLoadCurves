@@ -373,31 +373,20 @@ A Tabela 4 apresenta as perdas ativas e reativas para o alimentador BGE06 consid
 </table>
 </div>
 
-### Avaliação das curvas pelo OpenDSS
+### Avaliação das Curvas de Distribuções
 
 <p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" align="middle" width="500">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe1.png" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe2.png" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe3.png" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe4.png" width="330">
+	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe5.png" width="330">
+	<figcaption>
+  	Figura 9: Curvas de Distribuções por Classe (Desenvolvimento próprio).
+  	</figcaption>
 </p>
 
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe1.png" align="middle" width="500">
-</p>
-
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe2.png" align="middle" width="500">
-</p>
-
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe3.png" align="middle" width="500">
-</p>
-
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe4.png" align="middle" width="500">
-</p>
-
-<p align="center">
-	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe5.png" align="middle" width="500">
-</p>
 
 ### Avaliação pela Divergencia Kullback-Leibler
 
