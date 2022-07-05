@@ -161,7 +161,9 @@ Os autores em [6] comparam as três abordagens, obtendo melhores resultados com 
 
 <!-- Descrever a metodologia geral do NICE. Podemos tirar a figura do artigo que tínhamos colocado aqui e deixar só essa aqui. -->
 
-O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura 3, uma série de funções reversíveis $f(.)$ mapeiam as amostras reais $x$ para um espaço latente $z$ que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$
+O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a distribuição de probabilidade de amostras reais em uma distribuição a priori. Como mostrado na Figura 3, uma série de funções reversíveis $f(.)$ mapeiam as amostras reais $x$ para um espaço latente $z$ que mantém a dimensão dos dados de entrada. Quando o treinamento termina, as curvas de carga sintéticas são geradas pela função inversa $f^-1(z).$ 
+
+O modelo NICE implementado está formado por 4 camadas aditivas acopladas que mapeiam as curvas de carga diária em variáveis latentes que seguem uma distribuição Gaussiana. Após o treinamento, vetores de ruído Gaussiano são processados pelas funções inversas que são blocos do tipo Multi-Layer Perceptron (MLP). Cada MLP contem 5 camadas totalmente conectadas com 500 neurônios, e uma camada densa final com 96 neurônios que é a dimensão temporal das amostras a serem geradas. 
 
 <!-- 
 <p align="center">
@@ -170,7 +172,7 @@ O modelo NICE utiliza fluxos normalizados e funções reversíveis para mapear a
 
 <p align="center">
 	<img src="https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Flow.png" align="middle">
-	<figcaption>
+	<figcaption style="text-align:center">
   	Figura 3: Arquitetura do modelo NICE adotado neste trabalho (Desenvolvimento próprio).
   	</figcaption>
 </p>
@@ -200,17 +202,86 @@ $$D_{KL}(P||Q) = \sum_{x \in X} P(x) log \left( \frac{P(X)}{Q(X)} \right)$$
 
 
 
-## Resultados e Discussão dos Resultados
+## Análise de Resultados e Discussão 
 
 ### Ferramentas utilizadas
-A arquitetura do modelo está sendo desenvolvida utilizando TensorFlow 2.6.0. Está baseada no repositório disponível em: https://github.com/bojone/flow/blob/master/nice.py, com modificações nos parâmetros da rede que serão explicados nas seções seguintes. 
+A arquitetura do modelo foi desenvolvida utilizando TensorFlow 2.6.0, e está baseada no repositório disponível em: https://github.com/bojone/flow/blob/master/nice.py. Com o objetivo de acelerar o processo de treinamento da rede, foi utilizada uma unidade de processamento gráfico (GPU) NVIDIA Titan V. 
 
-### Configuração de parâmetros (KAREN  - REVISAR ESSA SEÇÃO)
+### Geração de curvas para cada classe de transformador
 
-A rede recebe dados de curvas de carga que contêm 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. 
+Neste experimento, um modelo NICE foi treinado para cada subconjunto de dados dos diferentes transformadores. O procedimento que será descrito se mantem para as 6 classes de curvas de carga. 
+
+A rede recebe vetores pré-processados de curvas de carga unidimensionais com 96 amostras correspondentes a medidas coletadas a cada 15 minutos ao longo do dia, quer dizer, no domínio do tempo. Os vetores passam pelas 4 camadas de acoplamento aditivo que contêm 5 camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Os hiperparâmeros selecionados para cada modelo são apresentados na Tabela. Foram implementadas técnicas de regularização como Early Stopping com diferentes valores de paciência para cada modelo. Durante o treinamento, a perda no conjunto de validação é monitorada para salvar o melhor modelo. Se durante o número de épocas definido pela paciência, a perda de validação não melhorou, o treinamento é encerrado.
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Medidor</th>
+    <th class="tg-7btt">Amostras</th>
+    <th class="tg-7btt">Batch</th>
+    <th class="tg-7btt">Épocas</th>
+    <th class="tg-7btt">Paciência</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">0</td>
+    <td class="tg-c3ow">9737</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">65</td>
+    <td class="tg-c3ow">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">9731</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">81</td>
+    <td class="tg-c3ow">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">8646</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">95</td>
+    <td class="tg-c3ow">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">1593</td>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-c3ow">286</td>
+    <td class="tg-c3ow">25</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">2883</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">230</td>
+    <td class="tg-c3ow">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">929</td>
+    <td class="tg-c3ow">64</td>
+    <td class="tg-c3ow">327</td>
+    <td class="tg-c3ow">35</td>
+  </tr>
+</tbody>
+</table>
+
+Cada medidor tem diferentes 
 Por enquanto estão sendo utilizadas exclusivamente as amostras do gerador ‘1000172’ que apresentam um perfil que poderia ser considerado como de um estabelecimento comercial. Assim, temos 400 amostras de treinamento e 70 de validação. É importante mencionar que os dados de mais transformadores serão utilizados na próxima etapa do projeto. 
 
-A rede contém 4 camadas de acoplamento aditivo tanto para transformação quanto para a inversão. Foram usadas camadas densas com 500 neurônios, e a camada final que mapeia um vetor da mesma dimensão da entrada (96 amostras). Selecionamos um tamanho de batch de 32 amostras e treinamos a rede durante 400 épocas, salvando o melhor modelo obtido. 
+
 
 O bloco de transformação inversa tem camadas com as mesmas características que o bloco codificador. Com o objetivo de amostrar novas curvas de carga da função de distribuição estimada, alimentamos o transformador invertido (ou decodificador) com amostras de uma distribuição Gaussiana aleatória e aplicamos o modelo aprendido.
 
