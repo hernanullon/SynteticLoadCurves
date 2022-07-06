@@ -69,7 +69,7 @@ Os medidores inteligentes instalados realizam medições a cada 30 segundos, col
     <tr>
         <td>activePowerC</td> <td>currentC</td> <td>reactivePowerC</td> 
     </tr>
-    <tr>https://github.com/hernanullon/SynteticLoadCurves/blob/main/reports/figures/Dist_Classe0.png
+    <tr>
         <td>angleA</td> <td>frequencyA</td> <td>threephaseActivePower</td> 
     </tr>
     <tr>
