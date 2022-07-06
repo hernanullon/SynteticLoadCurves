@@ -110,10 +110,10 @@ No banco de dados utilizado no trabalho, os medidores são agrupados em classes 
 		<td>Classe 2</td> <td>Ilu. Pública</td> <td>Classe 8</td> <td>Sala de aula</td>
 	</tr>
    	 <tr>
-		<td>Classe 3</td> <td>Restaurante</td> <td>Classe 9</td> <td>Eletroposto</td>
+		<td>Classe 3</td> <td>Consumo PV</td> <td>Classe 9</td> <td>Eletroposto</td>
 	</tr>
     	<tr>
-		<td>Classe 4</td> <td>PV</td> <td>Classe 10</td> <td>Biblioteca</td>
+		<td>Classe 4</td> <td>Geração PV</td> <td>Classe 10</td> <td>Biblioteca</td>
 	</tr>
     	<tr>
 		<td>Classe 5</td> <td>Comercial</td>
