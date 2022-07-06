@@ -191,7 +191,7 @@ $$R(k) = \frac{E[(X_t - \mu)(X_{t+k} - \mu)]}{\sigma ^2}$$ -->
 
 $$D_{KL}(P||Q) = \sum_{x \in X} P(x) log \left( \frac{P(X)}{Q(X)} \right)$$
 
-* **Estudos de fluxo de carga e análise de perdas no OpenDSS:**
+* **Análise de perdas no OpenDSS:**
 	No total, a UNICAMP possui cinco alimentadores (BGE02, BGE03, BGE04, BGE05 e BGE06), sendo que o maior sistema fotovoltaico e a estação de recarga para ônibus elétrico estão conectadas ao alimentador BGE06, cuja topologia é ilustrada na Figura 4. Na figura, cada ponto corresponde a uma barra (um poste) e o traçado representa os cabos, sendo que nem todas as barras possuem transformadores conectados e os cabos possuem diferentes bitolas não evidenciadas na figura. Além disso, o modelo elétrico deste alimentador é bem conhecido e confiável para realização de análises elétricas, como cálculo de fluxo de carga e análise de perdas. Neste sentido, este projeto irá utilizar apenas o alimentador BGE06 para verificação da qualidade das curvas geradas. Para essa análise, espera-se que ao substituir uma curva real por uma curva gerada para um tranformador de uma dada classe, as perdas elétricas e os níveis de tensão observados em cada barramento sejam mantidos aproximadamente constantes.
 
 <p align="center">
