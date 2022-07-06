@@ -321,7 +321,7 @@ O bloco de transformação inversa tem camadas com as mesmas características qu
   <!--	</figcaption>-->
 </p>
 
-Para a classe 2, que corresponde a transformadores de iluminação pública, o modelo NICE produziu curvas com valores de potência negativos, o que é fisicamente incoerente pois durante o dia essas cargas estão desligadas e, portanto, possuem um consumo nulo. Uma possível justificativa para o modelo ter aprendido e reproduzido esse comportamento pode estar associado a dados ruidosos e/ou medidores conectados a transformadores cujos sensores de atuação para ligar e desligar os equipamentos de iluminação estejam com defeitos. Uma alternativa para atuar nesse problema seria uma etapa de pós processamento das curvas para assegurar que esses eventuais valores negativos fiquem em zero. 
+Para a classe 2, que corresponde a transformadores de iluminação pública, o modelo NICE produziu curvas com valores de potência negativos, o que é fisicamente incoerente pois durante o dia essas cargas estão desligadas e, portanto, possuem um consumo nulo. Uma possível justificativa para o modelo ter aprendido e reproduzido esse comportamento pode estar associado a dados ruidosos e/ou medidores conectados a transformadores cujos sensores de atuação para ligar e desligar os equipamentos de iluminação estejam com defeitos. Uma alternativa para atuar nesse problema seria uma etapa de pós processamento das curvas para assegurar que esses eventuais valores negativos fiquem em zero. Para a classe 5 foram observados alguns picos de valores negativos que também não são coerentes com os perfis reais de geração.
 
 ### Geração de curvas de carga condicionais
 
